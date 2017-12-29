@@ -27,7 +27,6 @@
 		48E73D171FF4DC540016B75F /* SceneTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D031FF4DC530016B75F /* SceneTheme.swift */; };
 		48E73D181FF4DC540016B75F /* SceneWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D041FF4DC530016B75F /* SceneWorker.swift */; };
 		48E73D191FF4DC540016B75F /* SceneInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D051FF4DC540016B75F /* SceneInteraction.swift */; };
-		48E73D1A1FF4DC540016B75F /* AppTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D061FF4DC540016B75F /* AppTable.swift */; };
 		48E73D1B1FF4DC540016B75F /* SceneSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D071FF4DC540016B75F /* SceneSetup.swift */; };
 		48E73D1C1FF4DC540016B75F /* AppSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D081FF4DC540016B75F /* AppSceneFactory.swift */; };
 		48E73D1D1FF4DC540016B75F /* AppTableViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D091FF4DC540016B75F /* AppTableViewFactory.swift */; };
@@ -67,7 +66,6 @@
 		48E73D031FF4DC530016B75F /* SceneTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneTheme.swift; sourceTree = "<group>"; };
 		48E73D041FF4DC530016B75F /* SceneWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneWorker.swift; sourceTree = "<group>"; };
 		48E73D051FF4DC540016B75F /* SceneInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneInteraction.swift; sourceTree = "<group>"; };
-		48E73D061FF4DC540016B75F /* AppTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTable.swift; sourceTree = "<group>"; };
 		48E73D071FF4DC540016B75F /* SceneSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneSetup.swift; sourceTree = "<group>"; };
 		48E73D081FF4DC540016B75F /* AppSceneFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSceneFactory.swift; sourceTree = "<group>"; };
 		48E73D091FF4DC540016B75F /* AppTableViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTableViewFactory.swift; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 				48E73D271FF4E0C80016B75F /* AppResult.swift */,
 				48E73D081FF4DC540016B75F /* AppSceneFactory.swift */,
 				48006A081FF609B600411C2F /* AppSceneInjector.swift */,
-				48E73D061FF4DC540016B75F /* AppTable.swift */,
 				48E73CFA1FF4DC530016B75F /* AppTableCellFactory.swift */,
 				48E73D091FF4DC540016B75F /* AppTableViewFactory.swift */,
 				48C90ADE1FF6189700CE7FDA /* AppTableViewInjector.swift */,
@@ -340,7 +337,6 @@
 				48E73D281FF4E0C80016B75F /* AppResult.swift in Sources */,
 				48E73D131FF4DC540016B75F /* SceneTableCellFactory.swift in Sources */,
 				48006A091FF609B600411C2F /* AppSceneInjector.swift in Sources */,
-				48E73D1A1FF4DC540016B75F /* AppTable.swift in Sources */,
 				48E73D1D1FF4DC540016B75F /* AppTableViewFactory.swift in Sources */,
 				48E73D1B1FF4DC540016B75F /* SceneSetup.swift in Sources */,
 				48E73D161FF4DC540016B75F /* SceneTableDelegate.swift in Sources */,
