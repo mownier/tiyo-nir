@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48006A091FF609B600411C2F /* AppSceneInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48006A081FF609B600411C2F /* AppSceneInjector.swift */; };
+		48006A0B1FF6139100411C2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48006A0A1FF6139100411C2F /* SceneDelegate.swift */; };
+		48C90ADF1FF6189700CE7FDA /* AppTableViewInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C90ADE1FF6189700CE7FDA /* AppTableViewInjector.swift */; };
 		48E73CE31FF4DB890016B75F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73CE21FF4DB890016B75F /* AppDelegate.swift */; };
 		48E73CE51FF4DB890016B75F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73CE41FF4DB890016B75F /* ViewController.swift */; };
 		48E73CE81FF4DB890016B75F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48E73CE61FF4DB890016B75F /* Main.storyboard */; };
@@ -42,6 +45,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48006A081FF609B600411C2F /* AppSceneInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSceneInjector.swift; sourceTree = "<group>"; };
+		48006A0A1FF6139100411C2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		48C90ADE1FF6189700CE7FDA /* AppTableViewInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewInjector.swift; sourceTree = "<group>"; };
 		48E73CDF1FF4DB880016B75F /* TiyoNir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TiyoNir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E73CE21FF4DB890016B75F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48E73CE41FF4DB890016B75F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 			children = (
 				48E73CFB1FF4DC530016B75F /* Scene.swift */,
 				48E73D001FF4DC530016B75F /* SceneData.swift */,
+				48006A0A1FF6139100411C2F /* SceneDelegate.swift */,
 				48E73D0A1FF4DC540016B75F /* SceneFactory.swift */,
 				48E73CFD1FF4DC530016B75F /* SceneFlow.swift */,
 				48E73D051FF4DC540016B75F /* SceneInteraction.swift */,
@@ -173,9 +180,11 @@
 				48E73CFC1FF4DC530016B75F /* AppNavigationControllerFactory.swift */,
 				48E73D271FF4E0C80016B75F /* AppResult.swift */,
 				48E73D081FF4DC540016B75F /* AppSceneFactory.swift */,
+				48006A081FF609B600411C2F /* AppSceneInjector.swift */,
 				48E73D061FF4DC540016B75F /* AppTable.swift */,
 				48E73CFA1FF4DC530016B75F /* AppTableCellFactory.swift */,
 				48E73D091FF4DC540016B75F /* AppTableViewFactory.swift */,
+				48C90ADE1FF6189700CE7FDA /* AppTableViewInjector.swift */,
 				48E73D011FF4DC530016B75F /* AppWaypoint.swift */,
 			);
 			path = App;
@@ -315,6 +324,7 @@
 			files = (
 				48E73D0F1FF4DC540016B75F /* Scene.swift in Sources */,
 				48E73D121FF4DC540016B75F /* SceneItem.swift in Sources */,
+				48006A0B1FF6139100411C2F /* SceneDelegate.swift in Sources */,
 				48E73CE51FF4DB890016B75F /* ViewController.swift in Sources */,
 				48E73D101FF4DC540016B75F /* AppNavigationControllerFactory.swift in Sources */,
 				48E73D181FF4DC540016B75F /* SceneWorker.swift in Sources */,
@@ -329,11 +339,13 @@
 				48E73D201FF4DC540016B75F /* SceneTableCell.swift in Sources */,
 				48E73D281FF4E0C80016B75F /* AppResult.swift in Sources */,
 				48E73D131FF4DC540016B75F /* SceneTableCellFactory.swift in Sources */,
+				48006A091FF609B600411C2F /* AppSceneInjector.swift in Sources */,
 				48E73D1A1FF4DC540016B75F /* AppTable.swift in Sources */,
 				48E73D1D1FF4DC540016B75F /* AppTableViewFactory.swift in Sources */,
 				48E73D1B1FF4DC540016B75F /* SceneSetup.swift in Sources */,
 				48E73D161FF4DC540016B75F /* SceneTableDelegate.swift in Sources */,
 				48E73CE31FF4DB890016B75F /* AppDelegate.swift in Sources */,
+				48C90ADF1FF6189700CE7FDA /* AppTableViewInjector.swift in Sources */,
 				48E73D1C1FF4DC540016B75F /* AppSceneFactory.swift in Sources */,
 				48E73D261FF4E0AD0016B75F /* TextRemoteService.swift in Sources */,
 				48E73D1E1FF4DC540016B75F /* SceneFactory.swift in Sources */,

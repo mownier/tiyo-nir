@@ -8,12 +8,16 @@ public protocol SceneFlow: class {
 
 public extension Scene {
     
-    public class Flow: SceneFlow {
+    public class Flow: SceneFlow, AppSceneInjectable {
         
         weak var scene: UIViewController?
         
         public func showErrorScene(withError error: Error) -> Bool {
             return true
+        }
+        
+        public func injectScene(_ aScene: UIViewController) {
+            scene = aScene
         }
     }
 }

@@ -3,13 +3,26 @@ import UIKit
 
 public protocol SceneEntryWaypoint: class {
     
-    func withDelegate(_ aDelegate: SceneDelegate?) -> AppEntryWaypoint & SceneEntryWaypoint
+    func withTheme(_ theme: SceneTheme) -> AppEntryWaypoint & SceneEntryWaypoint
+    func withDelegate(_ delegate: SceneDelegate?) -> AppEntryWaypoint & SceneEntryWaypoint
+}
+
+public protocol SceneRootWaypoint: class {
+    
+    func withTheme(_ theme: SceneTheme) -> AppRootWaypoint & SceneRootWaypoint
+    func withDelegate(_ delegate: SceneDelegate?) -> AppRootWaypoint & SceneRootWaypoint
 }
 
 public extension Scene {
     
     public class Waypoint {
     
+        public struct Factory {
+            
+            public var scene: SceneFactory
+            public var nav: AppNavigationControllerFactory
+        }
+        
         let factory: Factory
         
         public init(factory: Factory) {
@@ -23,31 +36,36 @@ public extension Scene {
             self.init(factory: factory)
         }
         
-        public struct Factory {
-            
-            public var scene: SceneFactory
-            public var nav: AppNavigationControllerFactory
-        }
-        
         public class Entry: Waypoint, AppEntryWaypoint, SceneEntryWaypoint {
             
-            weak var delegate: SceneDelegate?
+            var theme: SceneTheme! = Theme()
+            var delegate: SceneDelegate?
             
             public func enter(from parent: UIViewController) -> Bool {
-                let scene = factory.scene.withDelegate(delegate).build()
+                let scene = factory.scene.withTheme(theme).withDelegate(delegate).build()
                 let nav = factory.nav.build(withRoot: scene)
                 parent.present(nav, animated: true, completion: nil)
-                delegate = nil
+                cleanUp()
                 return true
+            }
+            
+            public func withTheme(_ aTheme: SceneTheme) -> AppEntryWaypoint & SceneEntryWaypoint {
+                theme = aTheme
+                return self
             }
             
             public func withDelegate(_ aDelegate: SceneDelegate?) -> AppEntryWaypoint & SceneEntryWaypoint {
                 delegate = aDelegate
                 return self
             }
+            
+            func cleanUp() {
+                delegate = nil
+                theme = nil
+            }
         }
         
-        public class Exit: AppExitWaypoint {
+        public class Exit: AppExitWaypoint, AppSceneInjectable {
             
             weak var scene: UIViewController?
             
@@ -59,9 +77,16 @@ public extension Scene {
                 scene.dismiss(animated: true, completion: nil)
                 return true
             }
+            
+            public func injectScene(_ aScene: UIViewController) {
+                scene = aScene
+            }
         }
         
-        public class Root: Waypoint, AppRootWaypoint {
+        public class Root: Waypoint, AppRootWaypoint, SceneRootWaypoint {
+            
+            var theme: SceneTheme! = Theme()
+            var delegate: SceneDelegate?
             
             public func makeRoot(from window: UIWindow?) -> Bool {
                 guard let window = window, window.isKeyWindow else {
@@ -72,6 +97,21 @@ public extension Scene {
                 let nav = factory.nav.build(withRoot: scene)
                 window.rootViewController = nav
                 return true
+            }
+            
+            public func withTheme(_ aTheme: SceneTheme) -> AppRootWaypoint & SceneRootWaypoint {
+                theme = aTheme
+                return self
+            }
+            
+            public func withDelegate(_ aDelegate: SceneDelegate?) -> AppRootWaypoint & SceneRootWaypoint {
+                delegate = aDelegate
+                return self
+            }
+            
+            func cleanUp() {
+                delegate = nil
+                theme = nil
             }
         }
     }

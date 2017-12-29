@@ -3,9 +3,9 @@ import UIKit
 
 public extension Scene {
     
-    public class TableCellLaborer: AppTableCellFactoryLaborer {
+    public class TableCellLaborer: AppTableCellFactoryLaborer, SceneThemeInjectable {
         
-        let theme: SceneTheme
+        var theme: SceneTheme
         
         public var prototype: UITableViewCell?
         
@@ -27,6 +27,10 @@ public extension Scene {
             }
             return cell
         }
+        
+        public func injectTheme(_ aTheme: SceneTheme) {
+            theme = aTheme
+        }
     }
     
     public class TableCellFactory: AppTableCellFactory {
@@ -35,11 +39,6 @@ public extension Scene {
         
         public init(laborer: AppTableCellFactoryLaborer) {
             self.laborer = laborer
-        }
-        
-        public convenience init(theme: SceneTheme, isHeightDynamic: Bool = false) {
-            let laborer = TableCellLaborer(theme: theme, isHeightDynamic: isHeightDynamic)
-            self.init(laborer: laborer)
         }
         
         public func prototype(in section: Int, at row: Int) -> UITableViewCell? {

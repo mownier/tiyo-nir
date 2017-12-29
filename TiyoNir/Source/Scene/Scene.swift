@@ -1,106 +1,45 @@
 
 import UIKit
 
-public protocol SceneDelegate: class {
-    
-}
-
 public class Scene: UIViewController {
     
-    let table: AppTable
+    var tableView: UITableView!
     
-    let data: SceneData
-    let setup: SceneSetup
-    let theme: SceneTheme
-    let worker: SceneWorker
-    let interaction: SceneInteraction
+    var data: SceneData!
+    var setup: SceneSetup!
+    var theme: SceneTheme!
+    var worker: SceneWorker!
+    var interaction: SceneInteraction!
     
-    public weak var delegate: SceneDelegate?
-    
-    public init(theme: SceneTheme, interaction: SceneInteraction, table: AppTable, setup: SceneSetup, data: SceneData, worker: SceneWorker) {
-        self.theme = theme
-        self.interaction = interaction
-        self.table = table
-        self.setup = setup
-        self.data = data
-        self.worker = worker
-        
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    public convenience init() {
-        let theme = Theme()
-        let data = Data()
-        let waypoint = Waypoint.Exit()
-        let flow = Flow()
-        let worker = Worker()
-        
-        let output = Worker.Output(data: data, flow: flow)
-        let setup = Setup(theme: theme)
-        let interaction = Interaction(waypoint: waypoint)
-        
-        let tableCellFactory = TableCellFactory(theme: theme)
-        let tableDelegate = TableDelegate(data: data, cellFactory: tableCellFactory, setup: setup)
-        let tableDataSource = TableDataSource(data: data, cellFactory: tableCellFactory, setup: setup)
-        let table = AppTable(delegate: tableDelegate, dataSource: tableDataSource, cellFactory: tableCellFactory)
-        
-        self.init(theme: theme, interaction: interaction, table: table, setup: setup, data: data, worker: worker)
-        
-        output.tableView = table.view
-        worker.output = output
-        waypoint.scene = self
-        flow.scene = self
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        let theme = Theme()
-        let data = Data()
-        let waypoint = Waypoint.Exit()
-        let flow = Flow()
-        let worker = Worker()
-        
-        let output = Worker.Output(data: data, flow: flow)
-        let setup = Setup(theme: theme)
-        let interaction = Interaction(waypoint: waypoint)
-        
-        let tableCellFactory = TableCellFactory(theme: theme)
-        let tableDelegate = TableDelegate(data: data, cellFactory: tableCellFactory, setup: setup)
-        let tableDataSource = TableDataSource(data: data, cellFactory: tableCellFactory, setup: setup)
-        let table = AppTable(delegate: tableDelegate, dataSource: tableDataSource, cellFactory: tableCellFactory)
-        
-        self.theme = theme
-        self.interaction = interaction
-        self.table = table
-        self.setup = setup
-        self.data = data
-        self.worker = worker
-        
-        super.init(coder: aDecoder)
-        
-        output.tableView = table.view
-        worker.output = output
-        waypoint.scene = self
-        flow.scene = self
-    }
+    var tableDelegate: UITableViewDelegate?
+    var tableDataSource: UITableViewDataSource?
+    var tableViewInjectables: [AppTableViewInjectable] = []
     
     public override func loadView() {
         super.loadView()
         
         view.backgroundColor = theme.bgColor
         
-        table.view.estimatedRowHeight = 0
-        table.view.rowHeight = 0
-        table.view.separatorStyle = .none
-        table.view.tableFooterView = UIView()
+        tableView = UITableView()
+        tableView.estimatedRowHeight = 0
+        tableView.rowHeight = 0
+        tableView.separatorStyle = .none
+        tableView.tableFooterView = UIView()
+        tableView.dataSource = tableDataSource
+        tableView.delegate = tableDelegate
         
-        view.addSubview(table.view)
+        view.addSubview(tableView)
+        
+        for injectable in tableViewInjectables {
+            injectable.injectTableView(tableView)
+        }
     }
     
     public override func viewDidLayoutSubviews() {
         var rect = CGRect.zero
         
         rect = view.bounds
-        table.view.frame = rect
+        tableView.frame = rect
     }
     
     public override func viewDidLoad() {

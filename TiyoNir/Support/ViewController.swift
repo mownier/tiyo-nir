@@ -29,5 +29,12 @@ class ViewController: UIViewController {
 
 extension ViewController: SceneDelegate {
     
+    func sceneWillGoBack() {
+        print("did go back")
+    }
+    
+    func sceneDidFetchTexts(_ texts: [Text]) {
+        print(texts)
+    }
 }
 

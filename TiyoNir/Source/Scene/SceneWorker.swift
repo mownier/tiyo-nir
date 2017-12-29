@@ -16,7 +16,7 @@ public extension Scene {
     
     public class Worker: SceneWorker {
         
-        weak var output: SceneWorkerOutput?
+        var output: SceneWorkerOutput?
         
         let query: TextQuery
         
@@ -41,9 +41,10 @@ public extension Scene {
             }
         }
         
-        public class Output: SceneWorkerOutput {
+        public class Output: SceneWorkerOutput, SceneDelegateInjectable, AppTableViewInjectable {
             
             weak var tableView: UITableView?
+            weak var delegate: SceneDelegate?
             
             var data: SceneData
             var flow: SceneFlow
@@ -57,10 +58,20 @@ public extension Scene {
                 data.removeAll()
                 data.appendTexts(texts)
                 tableView?.reloadData()
+                
+                delegate?.sceneDidFetchTexts(texts)
             }
             
             public func workerDidFetchWithError(_ error: Error) {
                 let _ = flow.showErrorScene(withError: error)
+            }
+            
+            public func injectDelegate(_ aDelegate: SceneDelegate?) {
+                delegate = aDelegate
+            }
+            
+            public func injectTableView(_ aTableView: UITableView) {
+                tableView = aTableView
             }
         }
     }

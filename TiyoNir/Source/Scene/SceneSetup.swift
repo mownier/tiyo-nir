@@ -11,7 +11,7 @@ public protocol SceneSetup: class {
 
 public extension Scene {
     
-    public class Setup: SceneSetup {
+    public class Setup: SceneSetup, SceneThemeInjectable {
         
         var theme: SceneTheme
         
@@ -47,6 +47,10 @@ public extension Scene {
         
         public func reuseID(in section: Int, at row: Int) -> String {
             return "SceneTableCell"
+        }
+        
+        public func injectTheme(_ aTheme: SceneTheme) {
+            theme = aTheme
         }
     }
 }
