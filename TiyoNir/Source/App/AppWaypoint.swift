@@ -13,5 +13,5 @@ public protocol AppExitWaypoint: class {
 
 public protocol AppRootWaypoint: class {
     
-    func makeRoot(from window: UIWindow?) -> Bool
+    func makeRoot(in window: UIWindow?) -> Bool
 }

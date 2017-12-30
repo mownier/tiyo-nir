@@ -85,7 +85,7 @@ public extension Scene {
             var theme: SceneTheme! = Theme()
             var delegate: SceneDelegate?
             
-            public func makeRoot(from window: UIWindow?) -> Bool {
+            public func makeRoot(in window: UIWindow?) -> Bool {
                 guard let window = window, window.isKeyWindow else {
                     return false
                 }
