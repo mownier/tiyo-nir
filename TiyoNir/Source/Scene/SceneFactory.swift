@@ -65,7 +65,7 @@ public extension Scene {
             let setup = Setup(theme: theme)
             let worker = Worker()
             let waypoint = Waypoint.Exit()
-            let interaction = Interaction(waypoint: waypoint)
+            let interaction = Interaction()
             let cellLaborer = TableCellLaborer(theme: theme, isHeightDynamic: true)
             let cellFactory = TableCellFactory(laborer: cellLaborer)
             let workerOutput = Worker.Output(data: data, flow: flow)
@@ -89,7 +89,6 @@ public extension Scene {
             self.injectable.scenes.append(waypoint)
             self.injectable.themes.append(cellLaborer)
             self.injectable.themes.append(setup)
-            self.injectable.delegates.append(interaction)
             self.injectable.delegates.append(workerOutput)
             self.injectable.tableViews.append(workerOutput)
         }

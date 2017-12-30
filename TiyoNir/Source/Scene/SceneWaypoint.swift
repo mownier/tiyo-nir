@@ -20,7 +20,6 @@ public extension Scene {
         public struct Factory {
             
             public var scene: SceneFactory
-            public var nav: AppNavigationControllerFactory
         }
         
         let factory: Factory
@@ -31,8 +30,7 @@ public extension Scene {
         
         public convenience init() {
             let scene = Scene.Factory()
-            let nav = UINavigationController.Factory()
-            let factory = Factory(scene: scene, nav: nav)
+            let factory = Factory(scene: scene)
             self.init(factory: factory)
         }
         
@@ -43,8 +41,7 @@ public extension Scene {
             
             public func enter(from parent: UIViewController) -> Bool {
                 let scene = factory.scene.withTheme(theme).withDelegate(delegate).build()
-                let nav = factory.nav.build(withRoot: scene)
-                parent.present(nav, animated: true, completion: nil)
+                parent.present(scene, animated: true, completion: nil)
                 cleanUp()
                 return true
             }
@@ -94,8 +91,7 @@ public extension Scene {
                 }
                 
                 let scene = factory.scene.withDelegate(nil).build()
-                let nav = factory.nav.build(withRoot: scene)
-                window.rootViewController = nav
+                window.rootViewController = scene
                 return true
             }
             

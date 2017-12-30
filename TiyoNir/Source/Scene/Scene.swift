@@ -45,11 +45,6 @@ public class Scene: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        let back = UIBarButtonItem(image: #imageLiteral(resourceName: "button_back"), style: .plain, target: interaction, action: #selector(interaction.didTapBack))
-        navigationItem.leftBarButtonItem = back
-        
-        let _ = setup.formatNavigationItem(navigationItem, title: data.sceneTitle)
-        
         worker.fetchAllTexts()
     }
 }

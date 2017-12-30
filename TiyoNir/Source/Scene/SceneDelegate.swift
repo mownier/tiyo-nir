@@ -10,7 +10,6 @@ import UIKit
 
 public protocol SceneDelegate: class {
     
-    func sceneWillGoBack()
     func sceneDidFetchTexts(_ texts: [Text])
 }
 
