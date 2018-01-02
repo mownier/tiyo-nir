@@ -19,11 +19,12 @@ public extension TextsScene {
         }
         
         public func formatCell(_ cell: UITableViewCell, item: SceneItem?, action: SceneTableCellAction?) -> Bool {
-            guard let cell = cell as? TextsScene.TableCell, item != nil else {
+            guard let cell = cell as? TextsScene.TableCell, let item = item else {
                 return false
             }
             
             cell.action = action
+            cell.textLabel?.text = item.text.content
             return true
         }
         
