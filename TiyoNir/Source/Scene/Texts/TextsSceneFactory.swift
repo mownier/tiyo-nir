@@ -1,26 +1,25 @@
 
 import UIKit
 
-public protocol SceneFactory: class {
+public protocol TextsSceneFactory: class {
     
-    func withTheme(_ theme: TextsSceneTheme) -> SceneFactory & AppSceneFactory
-    func withDelegate(_ delegate: TextsSceneDelegate?) -> SceneFactory & AppSceneFactory
+    func withDelegate(_ delegate: TextsSceneDelegate?) -> AppSceneFactory
 }
 
 public extension TextsScene {
     
-    public class Factory: SceneFactory, AppSceneFactory {
+    public class Factory: TextsSceneFactory, AppSceneFactory {
         
         class Injector {
             
             var scene: SceneInjector
             var theme: TextsSceneThemeInjector
-            var delegate: SceneDelegateInjector
+            var delegate: TextsSceneDelegateInjector
             
             init() {
                 self.scene = SceneInjector()
                 self.theme = TextsSceneThemeInjector()
-                self.delegate = SceneDelegateInjector()
+                self.delegate = TextsSceneDelegateInjector()
             }
         }
         
@@ -28,7 +27,7 @@ public extension TextsScene {
             
             var scenes: [AppSceneInjectable]
             var themes: [TextsSceneThemeInjectable]
-            var delegates: [SceneDelegateInjectable]
+            var delegates: [TextsSceneDelegateInjectable]
             var tables: [AppTableViewInjectable]
             
             init() {
@@ -116,12 +115,7 @@ public extension TextsScene {
             return scene
         }
         
-        public func withTheme(_ aTheme: TextsSceneTheme) -> SceneFactory & AppSceneFactory {
-            theme = aTheme
-            return self
-        }
-        
-        public func withDelegate(_ aDelegate: TextsSceneDelegate?) -> SceneFactory & AppSceneFactory {
+        public func withDelegate(_ aDelegate: TextsSceneDelegate?) -> AppSceneFactory {
             delegate = aDelegate
             return self
         }

@@ -41,15 +41,15 @@ public extension TextsScene {
             }
         }
         
-        public class Output: TextsSceneWorkerOutput, SceneDelegateInjectable, AppTableViewInjectable {
+        public class Output: TextsSceneWorkerOutput, TextsSceneDelegateInjectable, AppTableViewInjectable {
             
             weak var tableView: UITableView?
             var delegate: TextsSceneDelegate?
             
             var data: TextsSceneData
-            var flow: SceneFlow
+            var flow: TextsSceneFlow
             
-            public init(data: TextsSceneData, flow: SceneFlow) {
+            public init(data: TextsSceneData, flow: TextsSceneFlow) {
                 self.data = data
                 self.flow = flow
             }

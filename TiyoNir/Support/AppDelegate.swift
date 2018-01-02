@@ -13,9 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let scene = InitialScene.Factory().build()
+        let nav = UINavigationController.Factory().build(withRoot: scene)
+        let waypoint = WindowWaypoint()
+        let _ = waypoint.withWindow(window).withScene(nav).makeRoot()
+        
         return true
     }
 

@@ -11,8 +11,13 @@ public extension TextsScene {
     
     public class Theme: TextsSceneTheme {
         
-        public var bgColor: UIColor = .white
-        public var backImage: UIImage? = #imageLiteral(resourceName: "button_back")
+        public var bgColor: UIColor
+        public var backImage: UIImage?
+        
+        public init() {
+            self.bgColor = .white
+            self.backImage = #imageLiteral(resourceName: "button_back")
+        }
     }
 }
 

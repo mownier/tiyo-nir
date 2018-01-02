@@ -12,17 +12,17 @@
         <!--Initial-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TiyoNir" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InitialScene" id="BYZ-38-t0r" customClass="InitialScene" customModule="TiyoNir" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWI-F5-qZS">
-                                <rect key="frame" x="145.5" y="286.5" width="84" height="30"/>
+                                <rect key="frame" x="127" y="286.5" width="121" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="VRW-d2-MJc"/>
                                 </constraints>
-                                <state key="normal" title="Go to Scene"/>
+                                <state key="normal" title="Go to TextsScene"/>
                                 <connections>
                                     <action selector="didTapButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="vCe-Zw-E6U"/>
                                 </connections>
@@ -44,6 +44,7 @@
         <!--Navigation Controller-->
         <scene sceneID="rHf-BP-Csn">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2aD-AE-kma" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ajE-Rc-CO6" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Eie-6r-yox">
@@ -55,7 +56,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="QUM-JI-cSB"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2aD-AE-kma" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136" y="133.13343328335833"/>
         </scene>
