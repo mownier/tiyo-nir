@@ -115,8 +115,6 @@ public extension Scene {
                 injector.theme.injectTheme(theme, using: injectable)
             }
             
-            cleanUp()
-            
             return scene
         }
         
@@ -128,21 +126,6 @@ public extension Scene {
         public func withDelegate(_ aDelegate: SceneDelegate?) -> SceneFactory & AppSceneFactory {
             delegate = aDelegate
             return self
-        }
-        
-        func cleanUp() {
-            data = nil
-            setup = nil
-            theme = nil
-            worker = nil
-            delegate = nil
-            interaction = nil
-            tableDelegate = nil
-            tableDataSource = nil
-            
-            injector = nil
-            injectable?.removeAll()
-            injectable = nil
         }
     }
 }
