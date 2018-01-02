@@ -10,12 +10,16 @@ import UIKit
 
 public class InitialScene: UIViewController {
     
+    var flow: InitialSceneFlow!
+    var theme: InitialSceneTheme!
+    
+    public override func loadView() {
+        super.loadView()
+        
+        view.backgroundColor = theme.bgColor
+    }
+    
     @IBAction func didTapButton() {
-        let waypoint = PresentWaypoint()
-        let delegate = Delegate.TextsScene()
-        let factory = TextsScene.Factory(waypoint: waypoint)
-        let scene = factory.withDelegate(delegate).build()
-        let nav = UINavigationController.Factory().build(withRoot: scene)
-        let _ = waypoint.withScene(nav).enter(from: self)
+        let _ = flow.showTextsScene()
     }
 }

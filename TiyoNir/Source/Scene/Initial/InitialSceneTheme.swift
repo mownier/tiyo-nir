@@ -11,7 +11,6 @@ import UIKit
 public protocol InitialSceneTheme: class {
     
     var bgColor: UIColor { get }
-    var backImage: UIImage? { get }
 }
 
 public extension InitialScene {
@@ -19,11 +18,9 @@ public extension InitialScene {
     public class Theme: InitialSceneTheme {
         
         public var bgColor: UIColor
-        public var backImage: UIImage?
         
         public init() {
             self.bgColor = .white
-            self.backImage = #imageLiteral(resourceName: "button_back")
         }
     }
 }

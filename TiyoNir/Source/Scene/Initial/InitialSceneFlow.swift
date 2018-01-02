@@ -8,31 +8,31 @@
 
 import UIKit
 
-public protocol InitialSceneFlow {
+protocol InitialSceneFlow: class {
     
-    func showTextsScene(withDelegate delegate: TextsSceneDelegate?) -> Bool
+    func showTextsScene() -> Bool
 }
 
-public extension InitialScene {
+extension InitialScene {
     
-    public class Flow: InitialSceneFlow, AppSceneInjectable {
+    class Flow: InitialSceneFlow, AppSceneInjectable {
         
         weak var scene: UIViewController?
         
-        public func showTextsScene(withDelegate delegate: TextsSceneDelegate?) -> Bool {
+        func showTextsScene() -> Bool {
             guard let scene = scene else {
                 return false
             }
             
-            let waypoint = PresentWaypoint()
             let delegate = Delegate.TextsScene()
+            let waypoint = PresentWaypoint()
             let factory = TextsScene.Factory(waypoint: waypoint)
             let textsScene = factory.withDelegate(delegate).build()
             let nav = UINavigationController.Factory().build(withRoot: textsScene)
             return waypoint.withScene(nav).enter(from: scene)
         }
         
-        public func injectScene(_ aScene: UIViewController) {
+        func injectScene(_ aScene: UIViewController) {
             scene = aScene
         }
     }

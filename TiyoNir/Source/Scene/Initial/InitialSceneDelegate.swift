@@ -8,33 +8,17 @@
 
 import UIKit
 
-public protocol InitialSceneDelegate: class {
-
-}
-
-public protocol InitialSceneDelegateInjectable: class {
+extension InitialScene {
     
-    func injectDelegate(_ delegate: InitialSceneDelegate?)
-}
-
-public class IntialSceneDelegateInjector {
-    
-    func injectDelegate(_ delegate: InitialSceneDelegate?, using injectable: InitialSceneDelegateInjectable) {
-        injectable.injectDelegate(delegate)
-    }
-}
-
-public extension InitialScene {
-    
-    public enum Delegate {
+    enum Delegate {
         
-        public class TextsScene: TextsSceneDelegate {
+        class TextsScene: TextsSceneDelegate {
             
-            public func sceneDidFetchTexts(_ texts: [Text]) {
+            func sceneDidFetchTexts(_ texts: [Text]) {
                 print(texts)
             }
             
-            public func sceneDidFetchWithError(_ error: Error) {
+            func sceneDidFetchWithError(_ error: Error) {
                 print(error)
             }
         }
