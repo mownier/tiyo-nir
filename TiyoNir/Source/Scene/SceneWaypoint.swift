@@ -7,12 +7,6 @@ public protocol SceneEntryWaypoint: class {
     func withDelegate(_ delegate: SceneDelegate?) -> AppEntryWaypoint & SceneEntryWaypoint
 }
 
-public protocol SceneRootWaypoint: class {
-    
-    func withTheme(_ theme: SceneTheme) -> AppRootWaypoint & SceneRootWaypoint
-    func withDelegate(_ delegate: SceneDelegate?) -> AppRootWaypoint & SceneRootWaypoint
-}
-
 public extension Scene {
     
     public class Waypoint {
@@ -86,30 +80,6 @@ public extension Scene {
             
             public func injectScene(_ aScene: UIViewController) {
                 scene = aScene
-            }
-        }
-        
-        public class Root: Waypoint, AppRootWaypoint, SceneRootWaypoint {
-            
-            public func makeRoot(in window: UIWindow?) -> Bool {
-                guard let window = window, window.isKeyWindow else {
-                    return false
-                }
-                
-                let sceneTheme: SceneTheme = theme == nil ? defaults.theme : theme!
-                let scene = factory.scene.withTheme(sceneTheme).withDelegate(delegate).build()
-                window.rootViewController = scene
-                return true
-            }
-            
-            public func withTheme(_ aTheme: SceneTheme) -> AppRootWaypoint & SceneRootWaypoint {
-                theme = aTheme
-                return self
-            }
-            
-            public func withDelegate(_ aDelegate: SceneDelegate?) -> AppRootWaypoint & SceneRootWaypoint {
-                delegate = aDelegate
-                return self
             }
         }
     }
