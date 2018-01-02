@@ -1,7 +1,7 @@
 
 import Foundation
 
-public protocol SceneData: class {
+public protocol TextsSceneData: class {
     
     var sceneTitle: String { get }
     var itemCount: Int { get }
@@ -11,9 +11,9 @@ public protocol SceneData: class {
     func appendTexts(_ texts: [Text])
 }
 
-public extension Scene {
+public extension TextsScene {
     
-    public class Data: SceneData {
+    public class Data: TextsSceneData {
         
         var items: [SceneItem] = []
         

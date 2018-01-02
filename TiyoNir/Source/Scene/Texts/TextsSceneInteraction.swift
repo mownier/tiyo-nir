@@ -1,14 +1,14 @@
 
 import Foundation
 
-@objc public protocol SceneInteraction: class {
+@objc public protocol TextsSceneInteraction: class {
     
     func didTapBack()
 }
 
-public extension Scene {
+public extension TextsScene {
     
-    public class Interaction: SceneInteraction {
+    public class Interaction: TextsSceneInteraction {
         
         var waypoint: AppExitWaypoint
         

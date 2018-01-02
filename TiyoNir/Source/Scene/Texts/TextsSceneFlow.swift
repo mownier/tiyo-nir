@@ -6,7 +6,7 @@ public protocol SceneFlow: class {
     func showErrorScene(withError error: Error) -> Bool
 }
 
-public extension Scene {
+public extension TextsScene {
     
     public class Flow: SceneFlow, AppSceneInjectable {
         

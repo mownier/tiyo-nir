@@ -1,25 +1,25 @@
 
 import UIKit
 
-public protocol SceneSetup: class {
+public protocol TextsSceneSetup: class {
     
     func formatCell(_ cell: UITableViewCell, item: SceneItem?, action: SceneTableCellAction?) -> Bool
     func computeHeight(for cell: UITableViewCell?, item: SceneItem?) -> CGFloat
     func reuseID(in section: Int, at row: Int) -> String
 }
 
-public extension Scene {
+public extension TextsScene {
     
-    public class Setup: SceneSetup, SceneThemeInjectable {
+    public class Setup: TextsSceneSetup, TextsSceneThemeInjectable {
         
-        var theme: SceneTheme
+        var theme: TextsSceneTheme
         
-        public init(theme: SceneTheme) {
+        public init(theme: TextsSceneTheme) {
             self.theme = theme
         }
         
         public func formatCell(_ cell: UITableViewCell, item: SceneItem?, action: SceneTableCellAction?) -> Bool {
-            guard let cell = cell as? Scene.TableCell, item != nil else {
+            guard let cell = cell as? TextsScene.TableCell, item != nil else {
                 return false
             }
             
@@ -28,7 +28,7 @@ public extension Scene {
         }
         
         public func computeHeight(for cell: UITableViewCell?, item: SceneItem?) -> CGFloat {
-            guard let cell = cell as? Scene.TableCell, formatCell(cell, item: item, action: nil) else {
+            guard let cell = cell as? TextsScene.TableCell, formatCell(cell, item: item, action: nil) else {
                 return 0
             }
             
@@ -39,7 +39,7 @@ public extension Scene {
             return "SceneTableCell"
         }
         
-        public func injectTheme(_ aTheme: SceneTheme) {
+        public func injectTheme(_ aTheme: TextsSceneTheme) {
             theme = aTheme
         }
     }

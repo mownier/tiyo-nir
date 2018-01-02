@@ -1,16 +1,16 @@
 
 import UIKit
 
-public extension Scene {
+public extension TextsScene {
     
     public class TableDelegate: NSObject, UITableViewDelegate {
         
         var cellFactory: AppTableCellFactory
         
-        var data: SceneData
-        var setup: SceneSetup
+        var data: TextsSceneData
+        var setup: TextsSceneSetup
         
-        public init(data: SceneData, cellFactory: AppTableCellFactory, setup: SceneSetup) {
+        public init(data: TextsSceneData, cellFactory: AppTableCellFactory, setup: TextsSceneSetup) {
             self.data = data
             self.cellFactory = cellFactory
             self.setup = setup

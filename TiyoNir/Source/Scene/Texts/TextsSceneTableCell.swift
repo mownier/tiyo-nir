@@ -5,7 +5,7 @@ public protocol SceneTableCellAction: class {
     
 }
 
-public extension Scene {
+public extension TextsScene {
     
     public class TableCell: UITableViewCell {
     

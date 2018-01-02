@@ -1,22 +1,22 @@
 
 import UIKit
 
-public protocol SceneWorker: class {
+public protocol TextsSceneWorker: class {
     
     func fetchAllTexts()
 }
 
-public protocol SceneWorkerOutput: class {
+public protocol TextsSceneWorkerOutput: class {
     
     func workerDidFetchTexts(_ texts: [Text])
     func workerDidFetchWithError(_ error: Error)
 }
 
-public extension Scene {
+public extension TextsScene {
     
-    public class Worker: SceneWorker {
+    public class Worker: TextsSceneWorker {
         
-        var output: SceneWorkerOutput?
+        var output: TextsSceneWorkerOutput?
         
         let query: TextQuery
         
@@ -41,15 +41,15 @@ public extension Scene {
             }
         }
         
-        public class Output: SceneWorkerOutput, SceneDelegateInjectable, AppTableViewInjectable {
+        public class Output: TextsSceneWorkerOutput, SceneDelegateInjectable, AppTableViewInjectable {
             
             weak var tableView: UITableView?
-            var delegate: SceneDelegate?
+            var delegate: TextsSceneDelegate?
             
-            var data: SceneData
+            var data: TextsSceneData
             var flow: SceneFlow
             
-            public init(data: SceneData, flow: SceneFlow) {
+            public init(data: TextsSceneData, flow: SceneFlow) {
                 self.data = data
                 self.flow = flow
             }
@@ -66,7 +66,7 @@ public extension Scene {
                 let _ = flow.showErrorScene(withError: error)
             }
             
-            public func injectDelegate(_ aDelegate: SceneDelegate?) {
+            public func injectDelegate(_ aDelegate: TextsSceneDelegate?) {
                 delegate = aDelegate
             }
             

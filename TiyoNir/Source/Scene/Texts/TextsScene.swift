@@ -1,15 +1,15 @@
 
 import UIKit
 
-public class Scene: UIViewController {
+public class TextsScene: UIViewController {
     
     var tableView: UITableView!
     
-    var data: SceneData!
-    var setup: SceneSetup!
-    var theme: SceneTheme!
-    var worker: SceneWorker!
-    var interaction: SceneInteraction!
+    var data: TextsSceneData!
+    var setup: TextsSceneSetup!
+    var theme: TextsSceneTheme!
+    var worker: TextsSceneWorker!
+    var interaction: TextsSceneInteraction!
     
     var tableDelegate: UITableViewDelegate?
     var tableDataSource: UITableViewDataSource?

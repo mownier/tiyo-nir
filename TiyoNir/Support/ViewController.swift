@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     @IBAction func didTapButton() {
         let waypoint = PresentWaypoint()
         let delegate = ViewControllerSceneDelegate()
-        let factory = Scene.Factory(waypoint: waypoint)
+        let factory = TextsScene.Factory(waypoint: waypoint)
         let scene = factory.withDelegate(delegate).build()
         let nav = UINavigationController.Factory().build(withRoot: scene)
         let _ = waypoint.withScene(nav).enter(from: self)

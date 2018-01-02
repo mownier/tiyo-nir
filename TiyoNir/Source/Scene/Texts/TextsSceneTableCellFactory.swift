@@ -1,15 +1,15 @@
 
 import UIKit
 
-public extension Scene {
+public extension TextsScene {
     
-    public class TableCellLaborer: AppTableCellFactoryLaborer, SceneThemeInjectable {
+    public class TableCellLaborer: AppTableCellFactoryLaborer, TextsSceneThemeInjectable {
         
-        var theme: SceneTheme
+        var theme: TextsSceneTheme
         
         public var prototype: UITableViewCell?
         
-        public init(theme: SceneTheme, isHeightDynamic: Bool) {
+        public init(theme: TextsSceneTheme, isHeightDynamic: Bool) {
             self.theme = theme
             
             guard isHeightDynamic else {
@@ -28,7 +28,7 @@ public extension Scene {
             return cell
         }
         
-        public func injectTheme(_ aTheme: SceneTheme) {
+        public func injectTheme(_ aTheme: TextsSceneTheme) {
             theme = aTheme
         }
     }

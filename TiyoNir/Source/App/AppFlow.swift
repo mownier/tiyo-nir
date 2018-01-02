@@ -12,7 +12,7 @@ public class AppFlow {
 
 }
 
-extension AppFlow: SceneDelegate {
+extension AppFlow: TextsSceneDelegate {
     
     public func sceneDidFetchWithError(_ error: Error) {
         

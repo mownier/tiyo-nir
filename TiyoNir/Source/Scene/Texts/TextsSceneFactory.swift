@@ -3,23 +3,23 @@ import UIKit
 
 public protocol SceneFactory: class {
     
-    func withTheme(_ theme: SceneTheme) -> SceneFactory & AppSceneFactory
-    func withDelegate(_ delegate: SceneDelegate?) -> SceneFactory & AppSceneFactory
+    func withTheme(_ theme: TextsSceneTheme) -> SceneFactory & AppSceneFactory
+    func withDelegate(_ delegate: TextsSceneDelegate?) -> SceneFactory & AppSceneFactory
 }
 
-public extension Scene {
+public extension TextsScene {
     
     public class Factory: SceneFactory, AppSceneFactory {
         
         class Injector {
             
             var scene: SceneInjector
-            var theme: SceneThemeInjector
+            var theme: TextsSceneThemeInjector
             var delegate: SceneDelegateInjector
             
             init() {
                 self.scene = SceneInjector()
-                self.theme = SceneThemeInjector()
+                self.theme = TextsSceneThemeInjector()
                 self.delegate = SceneDelegateInjector()
             }
         }
@@ -27,7 +27,7 @@ public extension Scene {
         class Injectable {
             
             var scenes: [AppSceneInjectable]
-            var themes: [SceneThemeInjectable]
+            var themes: [TextsSceneThemeInjectable]
             var delegates: [SceneDelegateInjectable]
             var tables: [AppTableViewInjectable]
             
@@ -46,12 +46,12 @@ public extension Scene {
             }
         }
         
-        var data: SceneData!
-        var setup: SceneSetup!
-        var theme: SceneTheme!
-        var worker: SceneWorker!
-        var delegate: SceneDelegate?
-        var interaction: SceneInteraction!
+        var data: TextsSceneData!
+        var setup: TextsSceneSetup!
+        var theme: TextsSceneTheme!
+        var worker: TextsSceneWorker!
+        var delegate: TextsSceneDelegate?
+        var interaction: TextsSceneInteraction!
         var tableDelegate: UITableViewDelegate!
         var tableDataSource: UITableViewDataSource!
         
@@ -92,7 +92,7 @@ public extension Scene {
         }
         
         public func build() -> UIViewController {
-            let scene = Scene()
+            let scene = TextsScene()
             scene.data = data
             scene.setup = setup
             scene.theme = theme
@@ -116,12 +116,12 @@ public extension Scene {
             return scene
         }
         
-        public func withTheme(_ aTheme: SceneTheme) -> SceneFactory & AppSceneFactory {
+        public func withTheme(_ aTheme: TextsSceneTheme) -> SceneFactory & AppSceneFactory {
             theme = aTheme
             return self
         }
         
-        public func withDelegate(_ aDelegate: SceneDelegate?) -> SceneFactory & AppSceneFactory {
+        public func withDelegate(_ aDelegate: TextsSceneDelegate?) -> SceneFactory & AppSceneFactory {
             delegate = aDelegate
             return self
         }
