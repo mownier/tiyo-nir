@@ -3,8 +3,8 @@ import UIKit
 
 public protocol SceneFactory: class {
     
-    func withTheme(_ aTheme: SceneTheme) -> SceneFactory & AppSceneFactory
-    func withDelegate(_ aDelegate: SceneDelegate?) -> SceneFactory & AppSceneFactory
+    func withTheme(_ theme: SceneTheme) -> SceneFactory & AppSceneFactory
+    func withDelegate(_ delegate: SceneDelegate?) -> SceneFactory & AppSceneFactory
 }
 
 public extension Scene {
