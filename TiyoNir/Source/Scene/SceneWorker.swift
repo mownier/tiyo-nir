@@ -44,7 +44,7 @@ public extension Scene {
         public class Output: SceneWorkerOutput, SceneDelegateInjectable, AppTableViewInjectable {
             
             weak var tableView: UITableView?
-            weak var delegate: SceneDelegate?
+            var delegate: SceneDelegate?
             
             var data: SceneData
             var flow: SceneFlow

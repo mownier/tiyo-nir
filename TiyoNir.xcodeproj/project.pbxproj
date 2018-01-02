@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		48006A091FF609B600411C2F /* AppSceneInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48006A081FF609B600411C2F /* AppSceneInjector.swift */; };
 		48006A0B1FF6139100411C2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48006A0A1FF6139100411C2F /* SceneDelegate.swift */; };
+		48A5C47D1FFBC848002ED886 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5C47C1FFBC848002ED886 /* AppFlow.swift */; };
 		48C90ADF1FF6189700CE7FDA /* AppTableViewInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C90ADE1FF6189700CE7FDA /* AppTableViewInjector.swift */; };
 		48E73CE31FF4DB890016B75F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73CE21FF4DB890016B75F /* AppDelegate.swift */; };
 		48E73CE51FF4DB890016B75F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73CE41FF4DB890016B75F /* ViewController.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		48006A081FF609B600411C2F /* AppSceneInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSceneInjector.swift; sourceTree = "<group>"; };
 		48006A0A1FF6139100411C2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		48A5C47C1FFBC848002ED886 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		48C90ADE1FF6189700CE7FDA /* AppTableViewInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewInjector.swift; sourceTree = "<group>"; };
 		48E73CDF1FF4DB880016B75F /* TiyoNir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TiyoNir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E73CE21FF4DB890016B75F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		48E73D231FF4DC930016B75F /* App */ = {
 			isa = PBXGroup;
 			children = (
+				48A5C47C1FFBC848002ED886 /* AppFlow.swift */,
 				48E73CFC1FF4DC530016B75F /* AppNavigationControllerFactory.swift */,
 				48E73D271FF4E0C80016B75F /* AppResult.swift */,
 				48E73D081FF4DC540016B75F /* AppSceneFactory.swift */,
@@ -326,6 +329,7 @@
 				48E73D301FF4E26F0016B75F /* TextQuery.swift in Sources */,
 				48E73D391FF4E55B0016B75F /* TextRemoteWriter.swift in Sources */,
 				48E73D171FF4DC540016B75F /* SceneTheme.swift in Sources */,
+				48A5C47D1FFBC848002ED886 /* AppFlow.swift in Sources */,
 				48E73D2C1FF4E19F0016B75F /* Text.swift in Sources */,
 				48E73D141FF4DC540016B75F /* SceneData.swift in Sources */,
 				48E73D191FF4DC540016B75F /* SceneInteraction.swift in Sources */,

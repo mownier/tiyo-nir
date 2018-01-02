@@ -22,21 +22,21 @@ class ViewController: UIViewController {
 
     @IBAction func didTapButton() {
         let waypoint = PresentWaypoint()
+        let delegate = ViewControllerSceneDelegate()
         let factory = Scene.Factory(waypoint: waypoint)
-        let scene = factory.withDelegate(self).build()
+        let scene = factory.withDelegate(delegate).build()
         let nav = UINavigationController.Factory().build(withRoot: scene)
         let _ = waypoint.withScene(nav).enter(from: self)
     }
 }
 
-extension ViewController: SceneDelegate {
-    
-    func sceneWillGoBack() {
-        print("did go back")
-    }
+class ViewControllerSceneDelegate: SceneDelegate {
     
     func sceneDidFetchTexts(_ texts: [Text]) {
         print(texts)
     }
+    
+    func sceneDidFetchWithError(_ error: Error) {
+        print(error)
+    }
 }
-

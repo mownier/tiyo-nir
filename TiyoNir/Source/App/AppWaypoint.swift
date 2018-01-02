@@ -45,8 +45,9 @@ public class PushWaypoint: AppPushWaypoint, AppEntryWaypoint, AppExitWaypoint, A
     var isExitAnimated: Bool = true
     
     public func enter(from parent: UIViewController) -> Bool {
-        guard let scene = scene, let nav = parent.navigationController else {
-            return false
+        guard let scene = scene, !(scene is UINavigationController),
+            let nav = parent.navigationController else {
+                return false
         }
         
         nav.pushViewController(scene, animated: isEntryAnimated)

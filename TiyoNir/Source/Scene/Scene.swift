@@ -45,7 +45,7 @@ public class Scene: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        let barItem = UIBarButtonItem(image: #imageLiteral(resourceName: "button_back"), style: .plain, target: interaction, action: #selector(interaction.didTapBack))
+        let barItem = UIBarButtonItem(image: theme.backImage, style: .plain, target: interaction, action: #selector(interaction.didTapBack))
         navigationItem.leftBarButtonItem = barItem
         navigationItem.title = data.sceneTitle
         

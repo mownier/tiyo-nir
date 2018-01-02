@@ -11,6 +11,7 @@ import UIKit
 public protocol SceneDelegate: class {
     
     func sceneDidFetchTexts(_ texts: [Text])
+    func sceneDidFetchWithError(_ error: Error)
 }
 
 public protocol SceneDelegateInjectable: class {
