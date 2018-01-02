@@ -20,10 +20,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
     @IBAction func didTapButton() {
-        let waypoint = Scene.Waypoint.Entry()
-        let _ = waypoint.withDelegate(self).enter(from: self)
+        let waypoint = PresentWaypoint()
+        let factory = Scene.Factory(waypoint: waypoint)
+        let scene = factory.withDelegate(self).build()
+        let nav = UINavigationController.Factory().build(withRoot: scene)
+        let _ = waypoint.withScene(nav).enter(from: self)
     }
 }
 

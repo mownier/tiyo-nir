@@ -58,14 +58,13 @@ public extension Scene {
         var injector: Injector!
         var injectable: Injectable!
         
-        public init() {
+        public init(waypoint: AppExitWaypoint) {
             let flow = Flow()
             let data = Data()
             let theme = Theme()
             let setup = Setup(theme: theme)
             let worker = Worker()
-            let waypoint = Waypoint.Exit()
-            let interaction = Interaction()
+            let interaction = Interaction(waypoint: waypoint)
             let cellLaborer = TableCellLaborer(theme: theme, isHeightDynamic: true)
             let cellFactory = TableCellFactory(laborer: cellLaborer)
             let workerOutput = Worker.Output(data: data, flow: flow)
@@ -86,7 +85,6 @@ public extension Scene {
             self.injectable = Injectable()
             
             self.injectable.scenes.append(flow)
-            self.injectable.scenes.append(waypoint)
             self.injectable.themes.append(cellLaborer)
             self.injectable.themes.append(setup)
             self.injectable.tables.append(workerOutput)

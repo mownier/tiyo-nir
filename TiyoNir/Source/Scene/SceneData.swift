@@ -3,6 +3,7 @@ import Foundation
 
 public protocol SceneData: class {
     
+    var sceneTitle: String { get }
     var itemCount: Int { get }
     
     func item(at row: Int) -> SceneItem?
@@ -15,6 +16,10 @@ public extension Scene {
     public class Data: SceneData {
         
         var items: [SceneItem] = []
+        
+        public var sceneTitle: String {
+            return "Scene"
+        }
         
         public var itemCount: Int {
             return items.count
