@@ -22,27 +22,41 @@ public extension Scene {
             public var scene: SceneFactory
         }
         
-        let factory: Factory
         
-        public init(factory: Factory) {
+        public struct Defaults {
+            
+            public var theme: SceneTheme
+        }
+        
+        var factory: Factory
+        var defaults: Defaults
+        
+        var theme: SceneTheme?
+        var delegate: SceneDelegate?
+        
+        public init(factory: Factory, defaults: Defaults) {
             self.factory = factory
+            self.defaults = defaults
+        }
+        
+        public convenience init(factory: Factory) {
+            let defaults = Defaults(theme: Theme())
+            self.init(factory: factory, defaults: defaults)
         }
         
         public convenience init() {
             let scene = Scene.Factory()
+            let defaults = Defaults(theme: Theme())
             let factory = Factory(scene: scene)
-            self.init(factory: factory)
+            self.init(factory: factory, defaults: defaults)
         }
         
         public class Entry: Waypoint, AppEntryWaypoint, SceneEntryWaypoint {
             
-            var theme: SceneTheme! = Theme()
-            var delegate: SceneDelegate?
-            
             public func enter(from parent: UIViewController) -> Bool {
-                let scene = factory.scene.withTheme(theme).withDelegate(delegate).build()
+                let sceneTheme: SceneTheme = theme == nil ? defaults.theme : theme!
+                let scene = factory.scene.withTheme(sceneTheme).withDelegate(delegate).build()
                 parent.present(scene, animated: true, completion: nil)
-                cleanUp()
                 return true
             }
             
@@ -54,11 +68,6 @@ public extension Scene {
             public func withDelegate(_ aDelegate: SceneDelegate?) -> AppEntryWaypoint & SceneEntryWaypoint {
                 delegate = aDelegate
                 return self
-            }
-            
-            func cleanUp() {
-                delegate = nil
-                theme = nil
             }
         }
         
@@ -82,15 +91,13 @@ public extension Scene {
         
         public class Root: Waypoint, AppRootWaypoint, SceneRootWaypoint {
             
-            var theme: SceneTheme! = Theme()
-            var delegate: SceneDelegate?
-            
             public func makeRoot(in window: UIWindow?) -> Bool {
                 guard let window = window, window.isKeyWindow else {
                     return false
                 }
                 
-                let scene = factory.scene.withDelegate(nil).build()
+                let sceneTheme: SceneTheme = theme == nil ? defaults.theme : theme!
+                let scene = factory.scene.withTheme(sceneTheme).withDelegate(delegate).build()
                 window.rootViewController = scene
                 return true
             }
@@ -103,11 +110,6 @@ public extension Scene {
             public func withDelegate(_ aDelegate: SceneDelegate?) -> AppRootWaypoint & SceneRootWaypoint {
                 delegate = aDelegate
                 return self
-            }
-            
-            func cleanUp() {
-                delegate = nil
-                theme = nil
             }
         }
     }
