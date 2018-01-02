@@ -13,7 +13,7 @@ public class Scene: UIViewController {
     
     var tableDelegate: UITableViewDelegate?
     var tableDataSource: UITableViewDataSource?
-    var tableViewInjectables: [AppTableViewInjectable] = []
+    var tableInjectables: [AppTableViewInjectable] = []
     
     public override func loadView() {
         super.loadView()
@@ -30,7 +30,7 @@ public class Scene: UIViewController {
         
         view.addSubview(tableView)
         
-        for injectable in tableViewInjectables {
+        for injectable in tableInjectables {
             injectable.injectTableView(tableView)
         }
     }

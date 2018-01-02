@@ -29,20 +29,20 @@ public extension Scene {
             var scenes: [AppSceneInjectable]
             var themes: [SceneThemeInjectable]
             var delegates: [SceneDelegateInjectable]
-            var tableViews: [AppTableViewInjectable]
+            var tables: [AppTableViewInjectable]
             
             init() {
                 self.scenes = []
                 self.themes = []
                 self.delegates = []
-                self.tableViews = []
+                self.tables = []
             }
             
             func removeAll() {
                 scenes.removeAll()
                 themes.removeAll()
                 delegates.removeAll()
-                tableViews.removeAll()
+                tables.removeAll()
             }
         }
         
@@ -89,8 +89,8 @@ public extension Scene {
             self.injectable.scenes.append(waypoint)
             self.injectable.themes.append(cellLaborer)
             self.injectable.themes.append(setup)
+            self.injectable.tables.append(workerOutput)
             self.injectable.delegates.append(workerOutput)
-            self.injectable.tableViews.append(workerOutput)
         }
         
         public func build() -> UIViewController {
