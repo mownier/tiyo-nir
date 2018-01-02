@@ -33,7 +33,6 @@
 		48E73D1E1FF4DC540016B75F /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D0A1FF4DC540016B75F /* SceneFactory.swift */; };
 		48E73D1F1FF4DC540016B75F /* SceneTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D0B1FF4DC540016B75F /* SceneTableDataSource.swift */; };
 		48E73D201FF4DC540016B75F /* SceneTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D0C1FF4DC540016B75F /* SceneTableCell.swift */; };
-		48E73D211FF4DC540016B75F /* SceneWaypoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D0D1FF4DC540016B75F /* SceneWaypoint.swift */; };
 		48E73D261FF4E0AD0016B75F /* TextRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D251FF4E0AD0016B75F /* TextRemoteService.swift */; };
 		48E73D281FF4E0C80016B75F /* AppResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D271FF4E0C80016B75F /* AppResult.swift */; };
 		48E73D2C1FF4E19F0016B75F /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D2B1FF4E19F0016B75F /* Text.swift */; };
@@ -72,7 +71,6 @@
 		48E73D0A1FF4DC540016B75F /* SceneFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
 		48E73D0B1FF4DC540016B75F /* SceneTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneTableDataSource.swift; sourceTree = "<group>"; };
 		48E73D0C1FF4DC540016B75F /* SceneTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneTableCell.swift; sourceTree = "<group>"; };
-		48E73D0D1FF4DC540016B75F /* SceneWaypoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneWaypoint.swift; sourceTree = "<group>"; };
 		48E73D251FF4E0AD0016B75F /* TextRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRemoteService.swift; sourceTree = "<group>"; };
 		48E73D271FF4E0C80016B75F /* AppResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResult.swift; sourceTree = "<group>"; };
 		48E73D2B1FF4E19F0016B75F /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 				48E73D0B1FF4DC540016B75F /* SceneTableDataSource.swift */,
 				48E73D021FF4DC530016B75F /* SceneTableDelegate.swift */,
 				48E73D031FF4DC530016B75F /* SceneTheme.swift */,
-				48E73D0D1FF4DC540016B75F /* SceneWaypoint.swift */,
 				48E73D041FF4DC530016B75F /* SceneWorker.swift */,
 			);
 			path = Scene;
@@ -331,7 +328,6 @@
 				48E73D171FF4DC540016B75F /* SceneTheme.swift in Sources */,
 				48E73D2C1FF4E19F0016B75F /* Text.swift in Sources */,
 				48E73D141FF4DC540016B75F /* SceneData.swift in Sources */,
-				48E73D211FF4DC540016B75F /* SceneWaypoint.swift in Sources */,
 				48E73D191FF4DC540016B75F /* SceneInteraction.swift in Sources */,
 				48E73D201FF4DC540016B75F /* SceneTableCell.swift in Sources */,
 				48E73D281FF4E0C80016B75F /* AppResult.swift in Sources */,
