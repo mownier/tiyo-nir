@@ -20,6 +20,7 @@ extension AppDelegate {
         
         struct Theme {
             
+            var nav: AppNavigationControllerTheme
             var initialScene: InitialSceneTheme
         }
         
@@ -29,13 +30,16 @@ extension AppDelegate {
         var theme: Theme
         
         init(window: UIWindow?) {
+            let themeProvider = AppSceneThemeProvider()
+            
             let waypoint = WindowWaypoint()
+            let navTheme = themeProvider.theme.nav
             let navFactory = UINavigationController.Factory()
-            let initialSceneTheme = AppSceneThemeBuilder.Initial().build()
+            let initialSceneTheme = themeProvider.theme.initial
             let initialSceneFactory = InitialScene.Factory()
             
-            let theme = Theme(initialScene: initialSceneTheme)
-            let factory = Factory(initialScene: initialSceneFactory, nav: navFactory)
+            let theme = Theme(nav: navTheme, initialScene: initialSceneTheme)
+            let factory = Factory(nav: navFactory, initialScene: initialSceneFactory)
             
             self.theme = theme
             self.window = window
@@ -45,7 +49,7 @@ extension AppDelegate {
         
         func makeRoot() -> Bool {
             let scene = factory.initialScene.withTheme(theme.initialScene).build()
-            let nav = factory.nav.build(withRoot: scene)
+            let nav = factory.nav.withTheme(theme.nav).build(withRoot: scene)
             return waypoint.withWindow(window).withScene(nav).makeRoot()
         }
     }

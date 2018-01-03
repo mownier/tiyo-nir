@@ -3,6 +3,7 @@ import UIKit
 
 public protocol AppNavigationControllerFactory: class {
     
+    func withTheme(_ theme: AppNavigationControllerTheme) -> AppNavigationControllerFactory
     func build(withRoot root: UIViewController) -> UINavigationController
 }
 
@@ -34,19 +35,20 @@ public extension UINavigationController {
         public var barTintColor: UIColor?
         public var barTitleFont: UIFont?
         public var barTitleTextColor: UIColor?
+        public var statusBarStyle: UIStatusBarStyle = .default
     }
     
     public class Factory: AppNavigationControllerFactory {
         
-        let theme: AppNavigationControllerTheme
+        var theme: AppNavigationControllerTheme
         
-        public init(theme: AppNavigationControllerTheme) {
-            self.theme = theme
+        public init() {
+            self.theme = Theme()
         }
         
-        public convenience init() {
-            let theme = Theme()
-            self.init(theme: theme)
+        public func withTheme(_ aTheme: AppNavigationControllerTheme) -> AppNavigationControllerFactory {
+            theme = aTheme
+            return self
         }
         
         public func build(withRoot root: UIViewController) -> UINavigationController {

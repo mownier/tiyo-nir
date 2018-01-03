@@ -19,8 +19,8 @@ extension InitialScene {
         
         struct Factory {
             
-            var textsScene: TextsSceneFactory
             var nav: AppNavigationControllerFactory
+            var textsScene: TextsSceneFactory
         }
         
         struct Delegate {
@@ -30,6 +30,7 @@ extension InitialScene {
         
         struct Theme {
             
+            var nav: AppNavigationControllerTheme
             var textsScene: TextsSceneTheme
         }
         
@@ -41,14 +42,17 @@ extension InitialScene {
         var delegate: Delegate
         
         init() {
+            let themeProvider = AppSceneThemeProvider()
+            
             let waypoint = PresentWaypoint()
+            let navTheme = themeProvider.theme.nav
             let navFactory = UINavigationController.Factory()
-            let textsSceneTheme = AppSceneThemeBuilder.Texts().build()
+            let textsSceneTheme = themeProvider.theme.texts
             let textsSceneFactory = TextsScene.Factory(waypoint: waypoint)
             let textsSceneDelegate = InitialScene.Delegate.TextsScene()
             
-            let theme = Theme(textsScene: textsSceneTheme)
-            let factory = Factory(textsScene: textsSceneFactory, nav: navFactory)
+            let theme = Theme(nav: navTheme, textsScene: textsSceneTheme)
+            let factory = Factory(nav: navFactory, textsScene: textsSceneFactory)
             let delegate = Delegate(textsScene: textsSceneDelegate)
             
             self.theme = theme
@@ -63,7 +67,7 @@ extension InitialScene {
             }
             
             let textsScene = factory.textsScene.withTheme(theme.textsScene).withDelegate(delegate.textsScene).build()
-            let nav = factory.nav.build(withRoot: textsScene)
+            let nav = factory.nav.withTheme(theme.nav).build(withRoot: textsScene)
             return waypoint.withScene(nav).enter(from: scene)
         }
         
