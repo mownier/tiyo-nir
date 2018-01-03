@@ -1,9 +1,10 @@
 
 import UIKit
+import TNCore
 
 extension TextsScene {
     
-    class TableCellLaborer: AppTableCellFactoryLaborer, TextsSceneThemeInjectable {
+    class TableCellLaborer: TableCellFactoryLaborer, TextsSceneThemeInjectable {
         
         var theme: TextsSceneTheme
         
@@ -33,11 +34,11 @@ extension TextsScene {
         }
     }
     
-    class TableCellFactory: AppTableCellFactory {
+    class TableCellFactory: TNCore.TableCellFactory {
         
-        let laborer: AppTableCellFactoryLaborer
+        let laborer: TableCellFactoryLaborer
         
-        init(laborer: AppTableCellFactoryLaborer) {
+        init(laborer: TableCellFactoryLaborer) {
             self.laborer = laborer
         }
         

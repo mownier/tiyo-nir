@@ -1,5 +1,6 @@
 
 import UIKit
+import TNCore
 
 protocol TextsSceneWorker: class {
     
@@ -9,7 +10,7 @@ protocol TextsSceneWorker: class {
 protocol TextsSceneWorkerOutput: class {
     
     func workerDidFetchTexts(_ texts: [Text])
-    func workerDidFetchWithError(_ error: Error)
+    func workerDidFetchWithError(_ error: Swift.Error)
 }
 
 extension TextsScene {
@@ -41,7 +42,7 @@ extension TextsScene {
             }
         }
         
-        class Output: TextsSceneWorkerOutput, TextsSceneDelegateInjectable, AppTableViewInjectable {
+        class Output: TextsSceneWorkerOutput, TextsSceneDelegateInjectable, TableViewInjectable {
             
             weak var tableView: UITableView?
             var delegate: TextsSceneDelegate?
@@ -62,7 +63,7 @@ extension TextsScene {
                 delegate?.sceneDidFetchTexts(texts)
             }
             
-            func workerDidFetchWithError(_ error: Error) {
+            func workerDidFetchWithError(_ error: Swift.Error) {
                 let _ = flow.showErrorScene(withError: error)
             }
             

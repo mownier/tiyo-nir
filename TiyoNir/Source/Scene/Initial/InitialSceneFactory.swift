@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import TNCore
 
 public protocol InitialSceneFactory: class {
     
-    func withTheme(_ theme: InitialSceneTheme) -> AppSceneFactory & InitialSceneFactory
+    func withTheme(_ theme: InitialSceneTheme) -> SceneFactory & InitialSceneFactory
 }
 
 public extension InitialScene {
     
-    public class Factory: AppSceneFactory, InitialSceneFactory {
+    public class Factory: SceneFactory, InitialSceneFactory {
         
         class Injector {
             
@@ -28,7 +29,7 @@ public extension InitialScene {
         
         class Injectable {
             
-            var scenes: [AppSceneInjectable]
+            var scenes: [SceneInjectable]
             
             init() {
                 self.scenes = []
@@ -78,7 +79,7 @@ public extension InitialScene {
             return scene
         }
         
-        public func withTheme(_ aTheme: InitialSceneTheme) -> AppSceneFactory & InitialSceneFactory {
+        public func withTheme(_ aTheme: InitialSceneTheme) -> SceneFactory & InitialSceneFactory {
             theme = aTheme
             return self
         }

@@ -1,5 +1,6 @@
 
 import Foundation
+import TNCore
 
 @objc protocol TextsSceneInteraction: class {
     
@@ -10,9 +11,9 @@ extension TextsScene {
     
     class Interaction: TextsSceneInteraction {
         
-        var waypoint: AppExitWaypoint
+        var waypoint: ExitWaypoint
         
-        init(waypoint: AppExitWaypoint) {
+        init(waypoint: ExitWaypoint) {
             self.waypoint = waypoint
         }
         

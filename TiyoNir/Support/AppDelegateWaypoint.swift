@@ -7,32 +7,33 @@
 //
 
 import UIKit
+import TNCore
 
 extension AppDelegate {
     
-    class Waypoint: AppRootWaypoint {
+    class Waypoint: RootWaypoint {
         
         struct Factory {
             
-            var nav: AppNavigationControllerFactory
+            var nav: NavigationControllerFactory
             var initialScene: InitialSceneFactory
         }
         
         struct Theme {
             
-            var nav: AppNavigationControllerTheme
+            var nav: NavigationControllerTheme
             var initialScene: InitialSceneTheme
         }
         
         var window: UIWindow?
         var factory: Factory
-        var waypoint: AppWindowWaypoint
+        var waypoint: WindowWaypoint
         var theme: Theme
         
         init(window: UIWindow?) {
             let themeProvider = AppSceneThemeProvider()
             
-            let waypoint = WindowWaypoint()
+            let waypoint = WindowWaypointSource()
             let navTheme = themeProvider.theme.nav
             let navFactory = UINavigationController.Factory()
             let initialSceneTheme = themeProvider.theme.initial

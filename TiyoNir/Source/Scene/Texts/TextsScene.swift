@@ -1,5 +1,6 @@
 
 import UIKit
+import TNCore
 
 public class TextsScene: UIViewController {
     
@@ -13,7 +14,7 @@ public class TextsScene: UIViewController {
     
     var tableDelegate: UITableViewDelegate?
     var tableDataSource: UITableViewDataSource?
-    var tableInjectables: [AppTableViewInjectable] = []
+    var tableInjectables: [TableViewInjectable] = []
     
     public override func loadView() {
         super.loadView()

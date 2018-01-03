@@ -1,16 +1,17 @@
 
 import UIKit
+import TNCore
 
 extension TextsScene {
     
     class TableDelegate: NSObject, UITableViewDelegate {
         
-        var cellFactory: AppTableCellFactory
+        var cellFactory: TableCellFactory
         
         var data: TextsSceneData
         var setup: TextsSceneSetup
         
-        init(data: TextsSceneData, cellFactory: AppTableCellFactory, setup: TextsSceneSetup) {
+        init(data: TextsSceneData, cellFactory: TableCellFactory, setup: TextsSceneSetup) {
             self.data = data
             self.cellFactory = cellFactory
             self.setup = setup

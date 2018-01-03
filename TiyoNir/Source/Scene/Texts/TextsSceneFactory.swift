@@ -1,15 +1,16 @@
 
 import UIKit
+import TNCore
 
 public protocol TextsSceneFactory: class {
     
-    func withTheme(_ theme: TextsSceneTheme) -> AppSceneFactory & TextsSceneFactory
-    func withDelegate(_ delegate: TextsSceneDelegate?) -> AppSceneFactory & TextsSceneFactory
+    func withTheme(_ theme: TextsSceneTheme) -> SceneFactory & TextsSceneFactory
+    func withDelegate(_ delegate: TextsSceneDelegate?) -> SceneFactory & TextsSceneFactory
 }
 
 public extension TextsScene {
     
-    public class Factory: TextsSceneFactory, AppSceneFactory {
+    public class Factory: TextsSceneFactory, SceneFactory {
         
         class Injector {
             
@@ -26,10 +27,10 @@ public extension TextsScene {
         
         class Injectable {
             
-            var scenes: [AppSceneInjectable]
+            var scenes: [SceneInjectable]
             var themes: [TextsSceneThemeInjectable]
             var delegates: [TextsSceneDelegateInjectable]
-            var tables: [AppTableViewInjectable]
+            var tables: [TableViewInjectable]
             
             init() {
                 self.scenes = []
@@ -58,7 +59,7 @@ public extension TextsScene {
         var injector: Injector!
         var injectable: Injectable!
         
-        public init(waypoint: AppExitWaypoint) {
+        public init(waypoint: ExitWaypoint) {
             let flow = Flow()
             let data = Data()
             let theme = Theme()
@@ -116,12 +117,12 @@ public extension TextsScene {
             return scene
         }
         
-        public func withTheme(_ aTheme: TextsSceneTheme) -> AppSceneFactory & TextsSceneFactory {
+        public func withTheme(_ aTheme: TextsSceneTheme) -> SceneFactory & TextsSceneFactory {
             theme = aTheme
             return self
         }
         
-        public func withDelegate(_ aDelegate: TextsSceneDelegate?) -> AppSceneFactory & TextsSceneFactory {
+        public func withDelegate(_ aDelegate: TextsSceneDelegate?) -> SceneFactory & TextsSceneFactory {
             delegate = aDelegate
             return self
         }

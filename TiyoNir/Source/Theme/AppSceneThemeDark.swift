@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import TNCore
 
 public class AppSceneThemeDark: AppSceneTheme {
     
     public var initial: InitialSceneTheme
     public var texts: TextsSceneTheme
-    public var nav: AppNavigationControllerTheme
+    public var nav: NavigationControllerTheme
     
     public init() {
         let initial = InitialScene.Theme()

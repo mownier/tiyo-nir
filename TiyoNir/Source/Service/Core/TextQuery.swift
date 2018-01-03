@@ -6,9 +6,11 @@
 //  Copyright © 2017 Nir. All rights reserved.
 //
 
+import TNCore
+
 public protocol TextQuery: class {
 
-    func getAllTexts(completion: (AppResult<[Text]>) -> Void)
-    func getTexts(for textIDs: [String], completion: (AppResult<[Text]>) -> Void)
+    func getAllTexts(completion: (Result<[Text]>) -> Void)
+    func getTexts(for textIDs: [String], completion: (Result<[Text]>) -> Void)
 }
 

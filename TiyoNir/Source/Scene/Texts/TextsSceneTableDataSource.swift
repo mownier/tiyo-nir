@@ -1,5 +1,6 @@
 
 import UIKit
+import TNCore
 
 extension TextsScene {
     
@@ -8,10 +9,10 @@ extension TextsScene {
         weak var cellAction: SceneTableCellAction?
         
         var data: TextsSceneData
-        var cellFactory: AppTableCellFactory
+        var cellFactory: TableCellFactory
         var setup: TextsSceneSetup
         
-        init(data: TextsSceneData, cellFactory: AppTableCellFactory, setup: TextsSceneSetup) {
+        init(data: TextsSceneData, cellFactory: TableCellFactory, setup: TextsSceneSetup) {
             self.data = data
             self.cellFactory = cellFactory
             self.setup = setup

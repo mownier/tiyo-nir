@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import TNCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var waypoint: AppRootWaypoint!
+    var waypoint: RootWaypoint!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
        

@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import TNCore
 
 public protocol AppSceneTheme {
     
     var initial: InitialSceneTheme { get }
     var texts: TextsSceneTheme { get }
-    var nav: AppNavigationControllerTheme { get }
+    var nav: NavigationControllerTheme { get }
 }
 
 public enum AppSceneThemeStyle {

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48006A091FF609B600411C2F /* AppSceneInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48006A081FF609B600411C2F /* AppSceneInjector.swift */; };
 		48006A0B1FF6139100411C2F /* TextsSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48006A0A1FF6139100411C2F /* TextsSceneDelegate.swift */; };
 		48397BF71FFCC85F00D0B6C7 /* AppSceneThemeDark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48397BF61FFCC85F00D0B6C7 /* AppSceneThemeDark.swift */; };
 		48397BF91FFCC88100D0B6C7 /* AppSceneThemeDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48397BF81FFCC88100D0B6C7 /* AppSceneThemeDefault.swift */; };
@@ -16,42 +15,35 @@
 		48A5C4831FFBD13E002ED886 /* InitialSceneFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5C4821FFBD13E002ED886 /* InitialSceneFlow.swift */; };
 		48A5C4871FFBE15B002ED886 /* InitialSceneTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5C4861FFBE15B002ED886 /* InitialSceneTheme.swift */; };
 		48A5C4941FFBEAE4002ED886 /* InitialSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5C4931FFBEAE4002ED886 /* InitialSceneDelegate.swift */; };
-		48C90ADF1FF6189700CE7FDA /* AppTableViewInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C90ADE1FF6189700CE7FDA /* AppTableViewInjector.swift */; };
 		48D8B2ED1FFCB50700E33868 /* AppSceneTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D8B2EC1FFCB50700E33868 /* AppSceneTheme.swift */; };
 		48E73CE31FF4DB890016B75F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73CE21FF4DB890016B75F /* AppDelegate.swift */; };
 		48E73CE51FF4DB890016B75F /* InitialScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73CE41FF4DB890016B75F /* InitialScene.swift */; };
 		48E73CE81FF4DB890016B75F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48E73CE61FF4DB890016B75F /* Main.storyboard */; };
 		48E73CEA1FF4DB890016B75F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48E73CE91FF4DB890016B75F /* Assets.xcassets */; };
 		48E73CED1FF4DB890016B75F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48E73CEB1FF4DB890016B75F /* LaunchScreen.storyboard */; };
-		48E73D0E1FF4DC540016B75F /* AppTableCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73CFA1FF4DC530016B75F /* AppTableCellFactory.swift */; };
 		48E73D0F1FF4DC540016B75F /* TextsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73CFB1FF4DC530016B75F /* TextsScene.swift */; };
-		48E73D101FF4DC540016B75F /* AppNavigationControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73CFC1FF4DC530016B75F /* AppNavigationControllerFactory.swift */; };
 		48E73D111FF4DC540016B75F /* TextsSceneFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73CFD1FF4DC530016B75F /* TextsSceneFlow.swift */; };
 		48E73D121FF4DC540016B75F /* TextsSceneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73CFE1FF4DC530016B75F /* TextsSceneItem.swift */; };
 		48E73D131FF4DC540016B75F /* TextsSceneTableCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73CFF1FF4DC530016B75F /* TextsSceneTableCellFactory.swift */; };
 		48E73D141FF4DC540016B75F /* TextsSceneData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D001FF4DC530016B75F /* TextsSceneData.swift */; };
-		48E73D151FF4DC540016B75F /* AppWaypoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D011FF4DC530016B75F /* AppWaypoint.swift */; };
 		48E73D161FF4DC540016B75F /* TextsSceneTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D021FF4DC530016B75F /* TextsSceneTableDelegate.swift */; };
 		48E73D171FF4DC540016B75F /* TextsSceneTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D031FF4DC530016B75F /* TextsSceneTheme.swift */; };
 		48E73D181FF4DC540016B75F /* TextsSceneWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D041FF4DC530016B75F /* TextsSceneWorker.swift */; };
 		48E73D191FF4DC540016B75F /* TextsSceneInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D051FF4DC540016B75F /* TextsSceneInteraction.swift */; };
 		48E73D1B1FF4DC540016B75F /* TextsSceneSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D071FF4DC540016B75F /* TextsSceneSetup.swift */; };
-		48E73D1C1FF4DC540016B75F /* AppSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D081FF4DC540016B75F /* AppSceneFactory.swift */; };
-		48E73D1D1FF4DC540016B75F /* AppTableViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D091FF4DC540016B75F /* AppTableViewFactory.swift */; };
 		48E73D1E1FF4DC540016B75F /* TextsSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D0A1FF4DC540016B75F /* TextsSceneFactory.swift */; };
 		48E73D1F1FF4DC540016B75F /* TextsSceneTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D0B1FF4DC540016B75F /* TextsSceneTableDataSource.swift */; };
 		48E73D201FF4DC540016B75F /* TextsSceneTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D0C1FF4DC540016B75F /* TextsSceneTableCell.swift */; };
 		48E73D261FF4E0AD0016B75F /* TextRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D251FF4E0AD0016B75F /* TextRemoteService.swift */; };
-		48E73D281FF4E0C80016B75F /* AppResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D271FF4E0C80016B75F /* AppResult.swift */; };
 		48E73D2C1FF4E19F0016B75F /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D2B1FF4E19F0016B75F /* Text.swift */; };
 		48E73D301FF4E26F0016B75F /* TextQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D2F1FF4E26F0016B75F /* TextQuery.swift */; };
 		48E73D331FF4E4B80016B75F /* TextWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D321FF4E4B80016B75F /* TextWriter.swift */; };
 		48E73D361FF4E5130016B75F /* TextRemoteQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D351FF4E5130016B75F /* TextRemoteQuery.swift */; };
 		48E73D391FF4E55B0016B75F /* TextRemoteWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73D381FF4E55B0016B75F /* TextRemoteWriter.swift */; };
+		FCBCF1F5AE51CC236A7C882E /* Pods_TiyoNir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8C3E77E46B1ACFC4CB45B1 /* Pods_TiyoNir.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		48006A081FF609B600411C2F /* AppSceneInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSceneInjector.swift; sourceTree = "<group>"; };
 		48006A0A1FF6139100411C2F /* TextsSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextsSceneDelegate.swift; sourceTree = "<group>"; };
 		48397BF61FFCC85F00D0B6C7 /* AppSceneThemeDark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSceneThemeDark.swift; sourceTree = "<group>"; };
 		48397BF81FFCC88100D0B6C7 /* AppSceneThemeDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSceneThemeDefault.swift; sourceTree = "<group>"; };
@@ -60,7 +52,6 @@
 		48A5C4821FFBD13E002ED886 /* InitialSceneFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSceneFlow.swift; sourceTree = "<group>"; };
 		48A5C4861FFBE15B002ED886 /* InitialSceneTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSceneTheme.swift; sourceTree = "<group>"; };
 		48A5C4931FFBEAE4002ED886 /* InitialSceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialSceneDelegate.swift; sourceTree = "<group>"; };
-		48C90ADE1FF6189700CE7FDA /* AppTableViewInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewInjector.swift; sourceTree = "<group>"; };
 		48D8B2EC1FFCB50700E33868 /* AppSceneTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSceneTheme.swift; sourceTree = "<group>"; };
 		48E73CDF1FF4DB880016B75F /* TiyoNir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TiyoNir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E73CE21FF4DB890016B75F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,31 +60,28 @@
 		48E73CE91FF4DB890016B75F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48E73CEC1FF4DB890016B75F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48E73CEE1FF4DB890016B75F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48E73CFA1FF4DC530016B75F /* AppTableCellFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTableCellFactory.swift; sourceTree = "<group>"; };
 		48E73CFB1FF4DC530016B75F /* TextsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextsScene.swift; sourceTree = "<group>"; };
-		48E73CFC1FF4DC530016B75F /* AppNavigationControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationControllerFactory.swift; sourceTree = "<group>"; };
 		48E73CFD1FF4DC530016B75F /* TextsSceneFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextsSceneFlow.swift; sourceTree = "<group>"; };
 		48E73CFE1FF4DC530016B75F /* TextsSceneItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextsSceneItem.swift; sourceTree = "<group>"; };
 		48E73CFF1FF4DC530016B75F /* TextsSceneTableCellFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextsSceneTableCellFactory.swift; sourceTree = "<group>"; };
 		48E73D001FF4DC530016B75F /* TextsSceneData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextsSceneData.swift; sourceTree = "<group>"; };
-		48E73D011FF4DC530016B75F /* AppWaypoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppWaypoint.swift; sourceTree = "<group>"; };
 		48E73D021FF4DC530016B75F /* TextsSceneTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextsSceneTableDelegate.swift; sourceTree = "<group>"; };
 		48E73D031FF4DC530016B75F /* TextsSceneTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextsSceneTheme.swift; sourceTree = "<group>"; };
 		48E73D041FF4DC530016B75F /* TextsSceneWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextsSceneWorker.swift; sourceTree = "<group>"; };
 		48E73D051FF4DC540016B75F /* TextsSceneInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextsSceneInteraction.swift; sourceTree = "<group>"; };
 		48E73D071FF4DC540016B75F /* TextsSceneSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextsSceneSetup.swift; sourceTree = "<group>"; };
-		48E73D081FF4DC540016B75F /* AppSceneFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSceneFactory.swift; sourceTree = "<group>"; };
-		48E73D091FF4DC540016B75F /* AppTableViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTableViewFactory.swift; sourceTree = "<group>"; };
 		48E73D0A1FF4DC540016B75F /* TextsSceneFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextsSceneFactory.swift; sourceTree = "<group>"; };
 		48E73D0B1FF4DC540016B75F /* TextsSceneTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextsSceneTableDataSource.swift; sourceTree = "<group>"; };
 		48E73D0C1FF4DC540016B75F /* TextsSceneTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextsSceneTableCell.swift; sourceTree = "<group>"; };
 		48E73D251FF4E0AD0016B75F /* TextRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRemoteService.swift; sourceTree = "<group>"; };
-		48E73D271FF4E0C80016B75F /* AppResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResult.swift; sourceTree = "<group>"; };
 		48E73D2B1FF4E19F0016B75F /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		48E73D2F1FF4E26F0016B75F /* TextQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextQuery.swift; sourceTree = "<group>"; };
 		48E73D321FF4E4B80016B75F /* TextWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWriter.swift; sourceTree = "<group>"; };
 		48E73D351FF4E5130016B75F /* TextRemoteQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRemoteQuery.swift; sourceTree = "<group>"; };
 		48E73D381FF4E55B0016B75F /* TextRemoteWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRemoteWriter.swift; sourceTree = "<group>"; };
+		B722B6B49547002C2955F544 /* Pods-TiyoNir.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiyoNir.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TiyoNir/Pods-TiyoNir.debug.xcconfig"; sourceTree = "<group>"; };
+		FE8C3E77E46B1ACFC4CB45B1 /* Pods_TiyoNir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TiyoNir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF846FE03BF628898B090311 /* Pods-TiyoNir.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TiyoNir.release.xcconfig"; path = "Pods/Target Support Files/Pods-TiyoNir/Pods-TiyoNir.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCBCF1F5AE51CC236A7C882E /* Pods_TiyoNir.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +144,8 @@
 			children = (
 				48E73CE11FF4DB890016B75F /* TiyoNir */,
 				48E73CE01FF4DB890016B75F /* Products */,
+				73F9C525BCCA5F6B87EC4F2D /* Pods */,
+				FB8441904C6BEFB64183419F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,7 +190,6 @@
 		48E73CF71FF4DBE30016B75F /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				48E73D231FF4DC930016B75F /* App */,
 				48E73D2A1FF4E18F0016B75F /* Model */,
 				48E73CF91FF4DC320016B75F /* Scene */,
 				48E73D241FF4E0990016B75F /* Service */,
@@ -215,21 +205,6 @@
 				48A5C47E1FFBCA88002ED886 /* Texts */,
 			);
 			path = Scene;
-			sourceTree = "<group>";
-		};
-		48E73D231FF4DC930016B75F /* App */ = {
-			isa = PBXGroup;
-			children = (
-				48E73CFC1FF4DC530016B75F /* AppNavigationControllerFactory.swift */,
-				48E73D271FF4E0C80016B75F /* AppResult.swift */,
-				48E73D081FF4DC540016B75F /* AppSceneFactory.swift */,
-				48006A081FF609B600411C2F /* AppSceneInjector.swift */,
-				48E73CFA1FF4DC530016B75F /* AppTableCellFactory.swift */,
-				48E73D091FF4DC540016B75F /* AppTableViewFactory.swift */,
-				48C90ADE1FF6189700CE7FDA /* AppTableViewInjector.swift */,
-				48E73D011FF4DC530016B75F /* AppWaypoint.swift */,
-			);
-			path = App;
 			sourceTree = "<group>";
 		};
 		48E73D241FF4E0990016B75F /* Service */ = {
@@ -292,6 +267,23 @@
 			path = Writer;
 			sourceTree = "<group>";
 		};
+		73F9C525BCCA5F6B87EC4F2D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B722B6B49547002C2955F544 /* Pods-TiyoNir.debug.xcconfig */,
+				FF846FE03BF628898B090311 /* Pods-TiyoNir.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FB8441904C6BEFB64183419F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE8C3E77E46B1ACFC4CB45B1 /* Pods_TiyoNir.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -299,9 +291,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48E73CF11FF4DB890016B75F /* Build configuration list for PBXNativeTarget "TiyoNir" */;
 			buildPhases = (
+				570274C4262434BD53203D5D /* [CP] Check Pods Manifest.lock */,
 				48E73CDB1FF4DB880016B75F /* Sources */,
 				48E73CDC1FF4DB880016B75F /* Frameworks */,
 				48E73CDD1FF4DB880016B75F /* Resources */,
+				DFC3CD468070630E5C025F12 /* [CP] Embed Pods Frameworks */,
+				FF27F9650159F285ECDE8A41 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -359,6 +354,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		570274C4262434BD53203D5D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TiyoNir-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFC3CD468070630E5C025F12 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TiyoNir/Pods-TiyoNir-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/TNCore/TNCore.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TNCore.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TiyoNir/Pods-TiyoNir-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF27F9650159F285ECDE8A41 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TiyoNir/Pods-TiyoNir-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		48E73CDB1FF4DB880016B75F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -372,7 +421,6 @@
 				48E73CE51FF4DB890016B75F /* InitialScene.swift in Sources */,
 				48A5C4811FFBCE6B002ED886 /* InitialSceneFactory.swift in Sources */,
 				48A5C4871FFBE15B002ED886 /* InitialSceneTheme.swift in Sources */,
-				48E73D101FF4DC540016B75F /* AppNavigationControllerFactory.swift in Sources */,
 				4875AA721FFBF2E1001CBC32 /* AppDelegateWaypoint.swift in Sources */,
 				48E73D181FF4DC540016B75F /* TextsSceneWorker.swift in Sources */,
 				48E73D331FF4E4B80016B75F /* TextWriter.swift in Sources */,
@@ -384,23 +432,16 @@
 				48E73D141FF4DC540016B75F /* TextsSceneData.swift in Sources */,
 				48E73D191FF4DC540016B75F /* TextsSceneInteraction.swift in Sources */,
 				48E73D201FF4DC540016B75F /* TextsSceneTableCell.swift in Sources */,
-				48E73D281FF4E0C80016B75F /* AppResult.swift in Sources */,
 				48E73D131FF4DC540016B75F /* TextsSceneTableCellFactory.swift in Sources */,
-				48006A091FF609B600411C2F /* AppSceneInjector.swift in Sources */,
-				48E73D1D1FF4DC540016B75F /* AppTableViewFactory.swift in Sources */,
 				48E73D1B1FF4DC540016B75F /* TextsSceneSetup.swift in Sources */,
 				48D8B2ED1FFCB50700E33868 /* AppSceneTheme.swift in Sources */,
 				48397BF91FFCC88100D0B6C7 /* AppSceneThemeDefault.swift in Sources */,
 				48E73D161FF4DC540016B75F /* TextsSceneTableDelegate.swift in Sources */,
 				48E73CE31FF4DB890016B75F /* AppDelegate.swift in Sources */,
-				48C90ADF1FF6189700CE7FDA /* AppTableViewInjector.swift in Sources */,
-				48E73D1C1FF4DC540016B75F /* AppSceneFactory.swift in Sources */,
 				48E73D261FF4E0AD0016B75F /* TextRemoteService.swift in Sources */,
 				48E73D1E1FF4DC540016B75F /* TextsSceneFactory.swift in Sources */,
 				48E73D111FF4DC540016B75F /* TextsSceneFlow.swift in Sources */,
-				48E73D151FF4DC540016B75F /* AppWaypoint.swift in Sources */,
 				48E73D1F1FF4DC540016B75F /* TextsSceneTableDataSource.swift in Sources */,
-				48E73D0E1FF4DC540016B75F /* AppTableCellFactory.swift in Sources */,
 				48E73D361FF4E5130016B75F /* TextRemoteQuery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +577,7 @@
 		};
 		48E73CF21FF4DB890016B75F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B722B6B49547002C2955F544 /* Pods-TiyoNir.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -551,6 +593,7 @@
 		};
 		48E73CF31FF4DB890016B75F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF846FE03BF628898B090311 /* Pods-TiyoNir.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

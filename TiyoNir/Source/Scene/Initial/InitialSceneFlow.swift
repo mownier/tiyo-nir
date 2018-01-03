@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TNCore
 
 protocol InitialSceneFlow: class {
     
@@ -15,11 +16,11 @@ protocol InitialSceneFlow: class {
 
 extension InitialScene {
     
-    class Flow: InitialSceneFlow, AppSceneInjectable {
+    class Flow: InitialSceneFlow, SceneInjectable {
         
         struct Factory {
             
-            var nav: AppNavigationControllerFactory
+            var nav: NavigationControllerFactory
             var textsScene: TextsSceneFactory
         }
         
@@ -30,7 +31,7 @@ extension InitialScene {
         
         struct Theme {
             
-            var nav: AppNavigationControllerTheme
+            var nav: NavigationControllerTheme
             var textsScene: TextsSceneTheme
         }
         
@@ -38,13 +39,13 @@ extension InitialScene {
         
         var theme: Theme
         var factory: Factory
-        var waypoint: AppPresentWaypoint
+        var waypoint: PresentWaypoint
         var delegate: Delegate
         
         init() {
             let themeProvider = AppSceneThemeProvider()
             
-            let waypoint = PresentWaypoint()
+            let waypoint = PresentWaypointSource()
             let navTheme = themeProvider.theme.nav
             let navFactory = UINavigationController.Factory()
             let textsSceneTheme = themeProvider.theme.texts
