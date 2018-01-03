@@ -17,18 +17,44 @@ extension InitialScene {
     
     class Flow: InitialSceneFlow, AppSceneInjectable {
         
+        struct Factory {
+            
+            var textsScene: TextsSceneFactory
+            var nav: AppNavigationControllerFactory
+        }
+        
+        struct Delegate {
+            
+            var textsScene: TextsSceneDelegate
+        }
+        
         weak var scene: UIViewController?
+        
+        var waypoint: AppPresentWaypoint
+        var factory: Factory
+        var delegate: Delegate
+        
+        init() {
+            let waypoint = PresentWaypoint()
+            let navFactory = UINavigationController.Factory()
+            let textsSceneFactory = TextsScene.Factory(waypoint: waypoint)
+            let textsSceneDelegate = InitialScene.Delegate.TextsScene()
+            
+            let factory = Factory(textsScene: textsSceneFactory, nav: navFactory)
+            let delegate = Delegate(textsScene: textsSceneDelegate)
+            
+            self.waypoint = waypoint
+            self.factory = factory
+            self.delegate = delegate
+        }
         
         func showTextsScene() -> Bool {
             guard let scene = scene else {
                 return false
             }
             
-            let delegate = Delegate.TextsScene()
-            let waypoint = PresentWaypoint()
-            let factory = TextsScene.Factory(waypoint: waypoint)
-            let textsScene = factory.withDelegate(delegate).build()
-            let nav = UINavigationController.Factory().build(withRoot: textsScene)
+            let textsScene = factory.textsScene.withDelegate(delegate.textsScene).build()
+            let nav = factory.nav.build(withRoot: textsScene)
             return waypoint.withScene(nav).enter(from: scene)
         }
         

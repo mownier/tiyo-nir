@@ -31,8 +31,8 @@ public protocol AppPushWaypoint: class {
 
 public protocol AppPresentWaypoint: class {
     
-    func withCompletionEntry(_ completion: @escaping () -> Void) -> AppPresentWaypoint
-    func withCompletionExit(_ completion: @escaping () -> Void) -> AppPresentWaypoint
+    func withCompletionEntry(_ completion: (() -> Void)?) -> AppPresentWaypoint
+    func withCompletionExit(_ completion: (() -> Void)?) -> AppPresentWaypoint
     func withAnimatedEntry(_ animated: Bool) -> AppPresentWaypoint
     func withAnimatedExit(_ animated: Bool) -> AppPresentWaypoint
     func withScene(_ scene: UIViewController) -> AppEntryWaypoint
@@ -119,12 +119,12 @@ public class PresentWaypoint: AppPresentWaypoint, AppEntryWaypoint, AppExitWaypo
         return true
     }
     
-    public func withCompletionEntry(_ completion: @escaping () -> Void) -> AppPresentWaypoint {
+    public func withCompletionEntry(_ completion: (() -> Void)?) -> AppPresentWaypoint {
         completionEntry = completion
         return self
     }
     
-    public func withCompletionExit(_ completion: @escaping () -> Void) -> AppPresentWaypoint {
+    public func withCompletionExit(_ completion: (() -> Void)?) -> AppPresentWaypoint {
         completionExit = completion
         return self
     }

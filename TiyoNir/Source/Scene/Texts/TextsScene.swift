@@ -27,6 +27,7 @@ public class TextsScene: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.dataSource = tableDataSource
         tableView.delegate = tableDelegate
+        tableView.contentInsetAdjustmentBehavior = .never
         
         view.addSubview(tableView)
         

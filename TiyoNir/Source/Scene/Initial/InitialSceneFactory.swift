@@ -8,14 +8,9 @@
 
 import UIKit
 
-public protocol InitialSceneFactory: class {
-    
-    func withTheme(_ theme: InitialSceneTheme) -> AppSceneFactory
-}
-
 public extension InitialScene {
     
-    public class Factory: AppSceneFactory, InitialSceneFactory {
+    public class Factory: AppSceneFactory {
         
         class Injector {
             
@@ -40,10 +35,14 @@ public extension InitialScene {
         
         var injector: Injector
         var injectable: Injectable
+        var storyboard: UIStoryboard
+        var storyboardID: String
         
         public init() {
             let flow = Flow()
             let theme = Theme()
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let sbID = "InitialScene"
             
             self.flow = flow
             self.theme = theme
@@ -52,11 +51,17 @@ public extension InitialScene {
             self.injectable = Injectable()
             
             self.injectable.scenes.append(flow)
+            
+            self.storyboard = sb
+            self.storyboardID = sbID
         }
         
         public func build() -> UIViewController {
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            let scene = sb.instantiateViewController(withIdentifier: "InitialScene") as! InitialScene
+            var scene: InitialScene! = storyboard.instantiateViewController(withIdentifier: storyboardID) as? InitialScene
+            
+            if scene == nil {
+                scene = InitialScene()
+            }
             
             scene.flow = flow
             scene.theme = theme
@@ -66,11 +71,6 @@ public extension InitialScene {
             }
             
             return scene
-        }
-        
-        public func withTheme(_ aTheme: InitialSceneTheme) -> AppSceneFactory {
-            theme = aTheme
-            return self
         }
     }
 }
