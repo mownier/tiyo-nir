@@ -1,9 +1,9 @@
 
 import UIKit
 
-public extension TextsScene {
+extension TextsScene {
     
-    public class TableDataSource: NSObject, UITableViewDataSource {
+    class TableDataSource: NSObject, UITableViewDataSource {
         
         weak var cellAction: SceneTableCellAction?
         
@@ -11,17 +11,17 @@ public extension TextsScene {
         var cellFactory: AppTableCellFactory
         var setup: TextsSceneSetup
         
-        public init(data: TextsSceneData, cellFactory: AppTableCellFactory, setup: TextsSceneSetup) {
+        init(data: TextsSceneData, cellFactory: AppTableCellFactory, setup: TextsSceneSetup) {
             self.data = data
             self.cellFactory = cellFactory
             self.setup = setup
         }
         
-        public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return data.itemCount
         }
         
-        public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let section = indexPath.section
             let row = indexPath.row
             let reuseID = setup.reuseID(in: section, at: row)

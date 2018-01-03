@@ -21,12 +21,12 @@ public extension TextsScene {
     }
 }
 
-public protocol TextsSceneThemeInjectable: class {
+protocol TextsSceneThemeInjectable: class {
     
     func injectTheme(_ theme: TextsSceneTheme)
 }
 
-public class TextsSceneThemeInjector {
+class TextsSceneThemeInjector {
     
     func injectTheme(_ theme: TextsSceneTheme, using injectable: TextsSceneThemeInjectable) {
         injectable.injectTheme(theme)

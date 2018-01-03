@@ -1,14 +1,14 @@
 
 import UIKit
 
-public protocol TextsSceneFlow: class {
+protocol TextsSceneFlow: class {
     
     func showErrorScene(withError error: Error) -> Bool
 }
 
-public extension TextsScene {
+extension TextsScene {
     
-    public class Flow: TextsSceneFlow, AppSceneInjectable {
+    class Flow: TextsSceneFlow, AppSceneInjectable {
         
         weak var scene: UIViewController?
         

@@ -1,24 +1,24 @@
 
 import UIKit
 
-public protocol TextsSceneSetup: class {
+protocol TextsSceneSetup: class {
     
     func formatCell(_ cell: UITableViewCell, item: SceneItem?, action: SceneTableCellAction?) -> Bool
     func computeHeight(for cell: UITableViewCell?, item: SceneItem?) -> CGFloat
     func reuseID(in section: Int, at row: Int) -> String
 }
 
-public extension TextsScene {
+extension TextsScene {
     
-    public class Setup: TextsSceneSetup, TextsSceneThemeInjectable {
+    class Setup: TextsSceneSetup, TextsSceneThemeInjectable {
         
         var theme: TextsSceneTheme
         
-        public init(theme: TextsSceneTheme) {
+        init(theme: TextsSceneTheme) {
             self.theme = theme
         }
         
-        public func formatCell(_ cell: UITableViewCell, item: SceneItem?, action: SceneTableCellAction?) -> Bool {
+        func formatCell(_ cell: UITableViewCell, item: SceneItem?, action: SceneTableCellAction?) -> Bool {
             guard let cell = cell as? TextsScene.TableCell, let item = item else {
                 return false
             }
@@ -28,7 +28,7 @@ public extension TextsScene {
             return true
         }
         
-        public func computeHeight(for cell: UITableViewCell?, item: SceneItem?) -> CGFloat {
+        func computeHeight(for cell: UITableViewCell?, item: SceneItem?) -> CGFloat {
             guard let cell = cell as? TextsScene.TableCell, formatCell(cell, item: item, action: nil) else {
                 return 0
             }
@@ -36,11 +36,11 @@ public extension TextsScene {
             return 44
         }
         
-        public func reuseID(in section: Int, at row: Int) -> String {
+        func reuseID(in section: Int, at row: Int) -> String {
             return "SceneTableCell"
         }
         
-        public func injectTheme(_ aTheme: TextsSceneTheme) {
+        func injectTheme(_ aTheme: TextsSceneTheme) {
             theme = aTheme
         }
     }

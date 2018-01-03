@@ -14,12 +14,12 @@ public protocol TextsSceneDelegate: class {
     func sceneDidFetchWithError(_ error: Error)
 }
 
-public protocol TextsSceneDelegateInjectable: class {
+protocol TextsSceneDelegateInjectable: class {
     
     func injectDelegate(_ delegate: TextsSceneDelegate?)
 }
 
-public class TextsSceneDelegateInjector {
+class TextsSceneDelegateInjector {
     
     func injectDelegate(_ delegate: TextsSceneDelegate?, using injectable: TextsSceneDelegateInjectable) {
         injectable.injectDelegate(delegate)

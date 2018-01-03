@@ -1,14 +1,14 @@
 
 import UIKit
 
-public protocol SceneTableCellAction: class {
+protocol SceneTableCellAction: class {
     
 }
 
-public extension TextsScene {
+extension TextsScene {
     
-    public class TableCell: UITableViewCell {
+    class TableCell: UITableViewCell {
     
-        public weak var action: SceneTableCellAction?
+        weak var action: SceneTableCellAction?
     }
 }

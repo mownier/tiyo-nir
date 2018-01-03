@@ -1,7 +1,7 @@
 
 import Foundation
 
-public protocol TextsSceneData: class {
+protocol TextsSceneData: class {
     
     var sceneTitle: String { get }
     var itemCount: Int { get }
@@ -11,21 +11,19 @@ public protocol TextsSceneData: class {
     func appendTexts(_ texts: [Text])
 }
 
-public extension TextsScene {
+extension TextsScene {
     
-    public class Data: TextsSceneData {
+    class Data: TextsSceneData {
         
         var items: [SceneItem] = []
         
-        public var sceneTitle: String {
-            return "Scene"
-        }
+        var sceneTitle: String = "Scene"
         
-        public var itemCount: Int {
+        var itemCount: Int {
             return items.count
         }
         
-        public func item(at row: Int) -> SceneItem? {
+        func item(at row: Int) -> SceneItem? {
             guard row >= 0, row < itemCount else {
                 return nil
             }
@@ -33,11 +31,11 @@ public extension TextsScene {
             return items[row]
         }
         
-        public func removeAll() {
+        func removeAll() {
             items.removeAll()
         }
         
-        public func appendTexts(_ texts: [Text]) {
+        func appendTexts(_ texts: [Text]) {
             let texts = Array(Set(texts))
             
             let mapped = texts.map({ SceneItem(text: $0) })
