@@ -67,7 +67,7 @@ extension InitialScene {
             }
             
             let textsScene = factory.textsScene.withTheme(theme.textsScene).withDelegate(delegate.textsScene).build()
-            let nav = factory.nav.withTheme(theme.nav).build(withRoot: textsScene)
+            let nav = factory.nav.withTheme(theme.nav).withRoot(textsScene).build()
             return waypoint.withScene(nav).enter(from: scene)
         }
         

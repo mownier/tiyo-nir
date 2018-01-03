@@ -49,7 +49,7 @@ extension AppDelegate {
         
         func makeRoot() -> Bool {
             let scene = factory.initialScene.withTheme(theme.initialScene).build()
-            let nav = factory.nav.withTheme(theme.nav).build(withRoot: scene)
+            let nav = factory.nav.withTheme(theme.nav).withRoot(scene).build()
             return waypoint.withWindow(window).withScene(nav).makeRoot()
         }
     }

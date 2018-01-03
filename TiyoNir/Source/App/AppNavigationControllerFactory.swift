@@ -4,7 +4,8 @@ import UIKit
 public protocol AppNavigationControllerFactory: class {
     
     func withTheme(_ theme: AppNavigationControllerTheme) -> AppNavigationControllerFactory
-    func build(withRoot root: UIViewController) -> UINavigationController
+    func withRoot(_ root: UIViewController) -> AppNavigationControllerFactory
+    func build() -> UINavigationController
 }
 
 public protocol AppNavigationControllerTheme: class {
@@ -44,6 +45,7 @@ public extension UINavigationController {
     public class Factory: AppNavigationControllerFactory {
         
         var theme: AppNavigationControllerTheme
+        var root: UIViewController?
         
         public init() {
             self.theme = Theme()
@@ -54,8 +56,16 @@ public extension UINavigationController {
             return self
         }
         
-        public func build(withRoot root: UIViewController) -> UINavigationController {
-            let nav = UINavigationController(rootViewController: root)
+        public func withRoot(_ aRoot: UIViewController) -> AppNavigationControllerFactory {
+            root = aRoot
+            return self
+        }
+        
+        public func build() -> UINavigationController {
+            var nav: UINavigationController = UINavigationController()
+            if root != nil {
+                nav = UINavigationController(rootViewController: root!)
+            }
             nav.navigationBar.isTranslucent = theme.isTranslucent
             nav.navigationBar.barStyle = theme.barStyle
             
