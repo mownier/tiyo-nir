@@ -8,9 +8,14 @@
 
 import UIKit
 
+public protocol InitialSceneFactory: class {
+    
+    func withTheme(_ theme: InitialSceneTheme) -> AppSceneFactory & InitialSceneFactory
+}
+
 public extension InitialScene {
     
-    public class Factory: AppSceneFactory {
+    public class Factory: AppSceneFactory, InitialSceneFactory {
         
         class Injector {
             
@@ -30,8 +35,8 @@ public extension InitialScene {
             }
         }
         
-        var flow: InitialSceneFlow!
-        var theme: InitialSceneTheme!
+        var flow: InitialSceneFlow
+        var theme: InitialSceneTheme
         
         var injector: Injector
         var injectable: Injectable
@@ -71,6 +76,11 @@ public extension InitialScene {
             }
             
             return scene
+        }
+        
+        public func withTheme(_ aTheme: InitialSceneTheme) -> AppSceneFactory & InitialSceneFactory {
+            theme = aTheme
+            return self
         }
     }
 }

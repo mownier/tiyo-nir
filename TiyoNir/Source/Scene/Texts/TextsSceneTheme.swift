@@ -7,6 +7,11 @@ public protocol TextsSceneTheme: class {
     var backImage: UIImage? { get }
 }
 
+public protocol TextsSceneThemeBuilder: class {
+    
+    func build() -> TextsSceneTheme
+}
+
 public extension TextsScene {
     
     public class Theme: TextsSceneTheme {

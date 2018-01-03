@@ -13,6 +13,11 @@ public protocol InitialSceneTheme: class {
     var bgColor: UIColor { get }
 }
 
+public protocol InitialSceneThemeBuilder: class {
+    
+    func build() -> InitialSceneTheme
+}
+
 public extension InitialScene {
     
     public class Theme: InitialSceneTheme {

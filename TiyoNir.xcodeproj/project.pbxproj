@@ -15,6 +15,7 @@
 		48A5C4871FFBE15B002ED886 /* InitialSceneTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5C4861FFBE15B002ED886 /* InitialSceneTheme.swift */; };
 		48A5C4941FFBEAE4002ED886 /* InitialSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5C4931FFBEAE4002ED886 /* InitialSceneDelegate.swift */; };
 		48C90ADF1FF6189700CE7FDA /* AppTableViewInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C90ADE1FF6189700CE7FDA /* AppTableViewInjector.swift */; };
+		48D8B2ED1FFCB50700E33868 /* AppSceneThemeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D8B2EC1FFCB50700E33868 /* AppSceneThemeBuilder.swift */; };
 		48E73CE31FF4DB890016B75F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73CE21FF4DB890016B75F /* AppDelegate.swift */; };
 		48E73CE51FF4DB890016B75F /* InitialScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E73CE41FF4DB890016B75F /* InitialScene.swift */; };
 		48E73CE81FF4DB890016B75F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48E73CE61FF4DB890016B75F /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		48A5C4861FFBE15B002ED886 /* InitialSceneTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSceneTheme.swift; sourceTree = "<group>"; };
 		48A5C4931FFBEAE4002ED886 /* InitialSceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialSceneDelegate.swift; sourceTree = "<group>"; };
 		48C90ADE1FF6189700CE7FDA /* AppTableViewInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewInjector.swift; sourceTree = "<group>"; };
+		48D8B2EC1FFCB50700E33868 /* AppSceneThemeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSceneThemeBuilder.swift; sourceTree = "<group>"; };
 		48E73CDF1FF4DB880016B75F /* TiyoNir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TiyoNir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E73CE21FF4DB890016B75F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48E73CE41FF4DB890016B75F /* InitialScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScene.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				48E73D271FF4E0C80016B75F /* AppResult.swift */,
 				48E73D081FF4DC540016B75F /* AppSceneFactory.swift */,
 				48006A081FF609B600411C2F /* AppSceneInjector.swift */,
+				48D8B2EC1FFCB50700E33868 /* AppSceneThemeBuilder.swift */,
 				48E73CFA1FF4DC530016B75F /* AppTableCellFactory.swift */,
 				48E73D091FF4DC540016B75F /* AppTableViewFactory.swift */,
 				48C90ADE1FF6189700CE7FDA /* AppTableViewInjector.swift */,
@@ -371,6 +374,7 @@
 				48006A091FF609B600411C2F /* AppSceneInjector.swift in Sources */,
 				48E73D1D1FF4DC540016B75F /* AppTableViewFactory.swift in Sources */,
 				48E73D1B1FF4DC540016B75F /* TextsSceneSetup.swift in Sources */,
+				48D8B2ED1FFCB50700E33868 /* AppSceneThemeBuilder.swift in Sources */,
 				48E73D161FF4DC540016B75F /* TextsSceneTableDelegate.swift in Sources */,
 				48E73CE31FF4DB890016B75F /* AppDelegate.swift in Sources */,
 				48C90ADF1FF6189700CE7FDA /* AppTableViewInjector.swift in Sources */,

@@ -14,27 +14,37 @@ extension AppDelegate {
         
         struct Factory {
             
-            var initialScene: AppSceneFactory
             var nav: AppNavigationControllerFactory
+            var initialScene: InitialSceneFactory
+        }
+        
+        struct Theme {
+            
+            var initialScene: InitialSceneTheme
         }
         
         var window: UIWindow?
         var factory: Factory
         var waypoint: AppWindowWaypoint
+        var theme: Theme
         
         init(window: UIWindow?) {
             let waypoint = WindowWaypoint()
             let navFactory = UINavigationController.Factory()
+            let initialSceneTheme = AppSceneThemeBuilder.Initial().build()
             let initialSceneFactory = InitialScene.Factory()
+            
+            let theme = Theme(initialScene: initialSceneTheme)
             let factory = Factory(initialScene: initialSceneFactory, nav: navFactory)
             
+            self.theme = theme
             self.window = window
             self.factory = factory
             self.waypoint = waypoint
         }
         
         func makeRoot() -> Bool {
-            let scene = factory.initialScene.build()
+            let scene = factory.initialScene.withTheme(theme.initialScene).build()
             let nav = factory.nav.build(withRoot: scene)
             return waypoint.withWindow(window).withScene(nav).makeRoot()
         }

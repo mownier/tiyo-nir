@@ -28,23 +28,32 @@ extension InitialScene {
             var textsScene: TextsSceneDelegate
         }
         
+        struct Theme {
+            
+            var textsScene: TextsSceneTheme
+        }
+        
         weak var scene: UIViewController?
         
-        var waypoint: AppPresentWaypoint
+        var theme: Theme
         var factory: Factory
+        var waypoint: AppPresentWaypoint
         var delegate: Delegate
         
         init() {
             let waypoint = PresentWaypoint()
             let navFactory = UINavigationController.Factory()
+            let textsSceneTheme = AppSceneThemeBuilder.Texts().build()
             let textsSceneFactory = TextsScene.Factory(waypoint: waypoint)
             let textsSceneDelegate = InitialScene.Delegate.TextsScene()
             
+            let theme = Theme(textsScene: textsSceneTheme)
             let factory = Factory(textsScene: textsSceneFactory, nav: navFactory)
             let delegate = Delegate(textsScene: textsSceneDelegate)
             
-            self.waypoint = waypoint
+            self.theme = theme
             self.factory = factory
+            self.waypoint = waypoint
             self.delegate = delegate
         }
         
@@ -53,7 +62,7 @@ extension InitialScene {
                 return false
             }
             
-            let textsScene = factory.textsScene.withDelegate(delegate.textsScene).build()
+            let textsScene = factory.textsScene.withTheme(theme.textsScene).withDelegate(delegate.textsScene).build()
             let nav = factory.nav.build(withRoot: textsScene)
             return waypoint.withScene(nav).enter(from: scene)
         }
