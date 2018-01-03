@@ -19,13 +19,11 @@ public class AppSceneThemeDark: AppSceneTheme {
         let texts = TextsScene.Theme()
         let nav = UINavigationController.Theme()
         
-        nav.barTintColor =  .black
+        nav.barTintColor = .black
         nav.isTranslucent = false
         nav.tintColor = .white
         nav.barTitleTextColor = .white
-        
-        initial.statusBarStyle = .lightContent
-        texts.statusBarStyle = .lightContent
+        nav.barStyle = .black
         
         self.initial = initial
         self.texts = texts

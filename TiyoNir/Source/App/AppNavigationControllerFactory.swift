@@ -19,6 +19,8 @@ public protocol AppNavigationControllerTheme: class {
     var barTintColor: UIColor? { get }
     var barTitleFont: UIFont? { get }
     var barTitleTextColor: UIColor? { get }
+    
+    var barStyle: UIBarStyle { get }
 }
 
 public extension UINavigationController {
@@ -35,7 +37,8 @@ public extension UINavigationController {
         public var barTintColor: UIColor?
         public var barTitleFont: UIFont?
         public var barTitleTextColor: UIColor?
-        public var statusBarStyle: UIStatusBarStyle = .default
+        
+        public var barStyle: UIBarStyle = .default
     }
     
     public class Factory: AppNavigationControllerFactory {
@@ -54,6 +57,7 @@ public extension UINavigationController {
         public func build(withRoot root: UIViewController) -> UINavigationController {
             let nav = UINavigationController(rootViewController: root)
             nav.navigationBar.isTranslucent = theme.isTranslucent
+            nav.navigationBar.barStyle = theme.barStyle
             
             if theme.shadowImage != nil {
                 nav.navigationBar.shadowImage = theme.shadowImage

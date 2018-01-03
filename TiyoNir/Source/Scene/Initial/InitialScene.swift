@@ -22,8 +22,4 @@ public class InitialScene: UIViewController {
     @IBAction func didTapButton() {
         let _ = flow.showTextsScene()
     }
-    
-    public override var preferredStatusBarStyle: UIStatusBarStyle {
-        return theme.statusBarStyle
-    }
 }

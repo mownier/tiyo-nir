@@ -52,9 +52,5 @@ public class TextsScene: UIViewController {
         
         worker.fetchAllTexts()
     }
-    
-    public override var preferredStatusBarStyle: UIStatusBarStyle {
-        return theme.statusBarStyle
-    }
 }
 
