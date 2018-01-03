@@ -3,7 +3,8 @@ import UIKit
 
 public protocol TextsSceneFactory: class {
     
-    func withDelegate(_ delegate: TextsSceneDelegate?) -> AppSceneFactory
+    func withTheme(_ theme: TextsSceneTheme) -> AppSceneFactory & TextsSceneFactory
+    func withDelegate(_ delegate: TextsSceneDelegate?) -> AppSceneFactory & TextsSceneFactory
 }
 
 public extension TextsScene {
@@ -115,7 +116,12 @@ public extension TextsScene {
             return scene
         }
         
-        public func withDelegate(_ aDelegate: TextsSceneDelegate?) -> AppSceneFactory {
+        public func withTheme(_ aTheme: TextsSceneTheme) -> AppSceneFactory & TextsSceneFactory {
+            theme = aTheme
+            return self
+        }
+        
+        public func withDelegate(_ aDelegate: TextsSceneDelegate?) -> AppSceneFactory & TextsSceneFactory {
             delegate = aDelegate
             return self
         }
