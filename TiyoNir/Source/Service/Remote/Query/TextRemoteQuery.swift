@@ -10,7 +10,7 @@ import TNCore
 
 public final class TextRemoteQuery: TextQuery {
     
-    public func getTexts(for textIDs: [String], completion: (Result<[Text]>) -> Void) {
+    public func getTexts(for textIDs: [String], completion: @escaping (Result<[Text]>) -> Void) {
         var texts = [Text]()
         var text = Text()
         text.id = "text:1"
@@ -19,7 +19,7 @@ public final class TextRemoteQuery: TextQuery {
         completion(.ok(texts))
     }
     
-    public func getAllTexts(completion: (Result<[Text]>) -> Void) {
+    public func getAllTexts(completion: @escaping (Result<[Text]>) -> Void) {
         var texts = [Text]()
         var text = Text()
         text.id = "text:1"

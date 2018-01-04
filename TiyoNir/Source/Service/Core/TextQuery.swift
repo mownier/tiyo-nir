@@ -10,7 +10,7 @@ import TNCore
 
 public protocol TextQuery: class {
 
-    func getAllTexts(completion: (Result<[Text]>) -> Void)
-    func getTexts(for textIDs: [String], completion: (Result<[Text]>) -> Void)
+    func getAllTexts(completion: @escaping (Result<[Text]>) -> Void)
+    func getTexts(for textIDs: [String], completion: @escaping (Result<[Text]>) -> Void)
 }
 
