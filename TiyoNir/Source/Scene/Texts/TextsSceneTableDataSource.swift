@@ -6,7 +6,7 @@ extension TextsScene {
     
     class TableDataSource: NSObject, UITableViewDataSource {
         
-        weak var cellAction: TextsSceneTableCellAction?
+        var cellAction: TextsSceneTableCellAction?
         
         var data: TextsSceneData
         var cellFactory: TableCellFactory
