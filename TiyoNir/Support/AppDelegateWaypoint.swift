@@ -25,7 +25,7 @@ extension AppDelegate {
             var initialScene: InitialSceneTheme
         }
         
-        var window: UIWindow?
+        weak var window: UIWindow?
         var factory: Factory
         var waypoint: WindowWaypoint
         var theme: Theme

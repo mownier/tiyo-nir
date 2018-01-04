@@ -45,7 +45,7 @@ extension TextsScene {
         class Output: TextsSceneWorkerOutput, TextsSceneDelegateInjectable, TableViewInjectable {
             
             weak var tableView: UITableView?
-            var delegate: TextsSceneDelegate?
+            weak var delegate: TextsSceneDelegate?
             
             var data: TextsSceneData
             var flow: TextsSceneFlow
