@@ -3,7 +3,7 @@ import UIKit
 
 protocol TextsSceneSetup: class {
     
-    func formatCell(_ cell: UITableViewCell, item: SceneItem?, action: SceneTableCellAction?) -> Bool
+    func formatCell(_ cell: UITableViewCell, item: SceneItem?, action: TextsSceneTableCellAction?) -> Bool
     func computeHeight(for cell: UITableViewCell?, item: SceneItem?) -> CGFloat
     func reuseID(in section: Int, at row: Int) -> String
 }
@@ -18,7 +18,7 @@ extension TextsScene {
             self.theme = theme
         }
         
-        func formatCell(_ cell: UITableViewCell, item: SceneItem?, action: SceneTableCellAction?) -> Bool {
+        func formatCell(_ cell: UITableViewCell, item: SceneItem?, action: TextsSceneTableCellAction?) -> Bool {
             guard let cell = cell as? TextsScene.TableCell, let item = item else {
                 return false
             }
