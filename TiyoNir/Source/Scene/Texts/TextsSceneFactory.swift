@@ -38,13 +38,6 @@ public extension TextsScene {
                 self.delegates = []
                 self.tables = []
             }
-            
-            func removeAll() {
-                scenes.removeAll()
-                themes.removeAll()
-                delegates.removeAll()
-                tables.removeAll()
-            }
         }
         
         var data: TextsSceneData!
@@ -65,6 +58,7 @@ public extension TextsScene {
             let theme = Theme()
             let setup = Setup(theme: theme)
             let worker = Worker()
+            let cellAction = TableCellAction()
             let interaction = Interaction(waypoint: waypoint)
             let cellLaborer = TableCellLaborer(theme: theme, isHeightDynamic: true)
             let cellFactory = TableCellFactory(laborer: cellLaborer)
@@ -73,6 +67,7 @@ public extension TextsScene {
             let tableDataSource = TableDataSource(data: data, cellFactory: cellFactory, setup: setup)
             
             worker.output = workerOutput
+            tableDataSource.cellAction = cellAction
             
             self.data = data
             self.theme = theme
@@ -94,6 +89,7 @@ public extension TextsScene {
         
         public func build() -> UIViewController {
             let scene = TextsScene()
+            
             scene.data = data
             scene.setup = setup
             scene.theme = theme
