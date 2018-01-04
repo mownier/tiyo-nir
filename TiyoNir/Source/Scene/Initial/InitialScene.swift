@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  InitialScene.swift
 //  TiyoNir
 //
 //  Created by Mounir Ybanez on 12/28/17.
