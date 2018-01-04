@@ -20,8 +20,15 @@ extension InitialScene {
         
         struct Factory {
             
-            var nav: NavigationControllerFactory
-            var textsScene: TextsSceneFactory
+            var nav: NavigationControllerFactory {
+                let factory = UINavigationController.Factory()
+                return factory
+            }
+            
+            func textsScene(withWaypoint waypoint: ExitWaypoint) -> TextsSceneFactory {
+                let factory = TextsScene.Factory(waypoint: waypoint)
+                return factory
+            }
         }
         
         struct Delegate {
@@ -39,7 +46,7 @@ extension InitialScene {
         
         var theme: Theme
         var factory: Factory
-        var waypoint: PresentWaypoint
+        var waypoint: PresentWaypoint & ExitWaypoint
         var delegate: Delegate
         
         init() {
@@ -47,13 +54,11 @@ extension InitialScene {
             
             let waypoint = PresentWaypointSource()
             let navTheme = themeProvider.theme.nav
-            let navFactory = UINavigationController.Factory()
             let textsSceneTheme = themeProvider.theme.texts
-            let textsSceneFactory = TextsScene.Factory(waypoint: waypoint)
             let textsSceneDelegate = InitialScene.Delegate.TextsScene()
             
             let theme = Theme(nav: navTheme, textsScene: textsSceneTheme)
-            let factory = Factory(nav: navFactory, textsScene: textsSceneFactory)
+            let factory = Factory()
             let delegate = Delegate(textsScene: textsSceneDelegate)
             
             self.theme = theme
@@ -67,7 +72,7 @@ extension InitialScene {
                 return false
             }
             
-            let textsScene = factory.textsScene.withTheme(theme.textsScene).withDelegate(delegate.textsScene).build()
+            let textsScene = factory.textsScene(withWaypoint: waypoint).withTheme(theme.textsScene).withDelegate(delegate.textsScene).build()
             let nav = factory.nav.withTheme(theme.nav).withRoot(textsScene).build()
             return waypoint.withScene(nav).enter(from: scene)
         }
