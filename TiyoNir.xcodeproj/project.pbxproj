@@ -384,10 +384,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TiyoNir/Pods-TiyoNir-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/TNCore/TNCore.framework",
+				"${BUILT_PRODUCTS_DIR}/TNExtensions/TNExtensions.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TNCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TNExtensions.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

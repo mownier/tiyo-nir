@@ -8,6 +8,7 @@
 
 import UIKit
 import TNCore
+import TNExtensions
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

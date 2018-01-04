@@ -5,4 +5,5 @@ use_frameworks!
 
 target 'TiyoNir' do
     pod 'TNCore'
+    pod 'TNExtensions/ImageCreator'
 end
