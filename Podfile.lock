@@ -1,5 +1,17 @@
 PODS:
-  - TNCore (0.2)
+  - TNCore (0.2.1):
+    - TNCore/Error (= 0.2.1)
+    - TNCore/NavigationController (= 0.2.1)
+    - TNCore/Result (= 0.2.1)
+    - TNCore/Scene (= 0.2.1)
+    - TNCore/TableView (= 0.2.1)
+    - TNCore/Waypoint (= 0.2.1)
+  - TNCore/Error (0.2.1)
+  - TNCore/NavigationController (0.2.1)
+  - TNCore/Result (0.2.1)
+  - TNCore/Scene (0.2.1)
+  - TNCore/TableView (0.2.1)
+  - TNCore/Waypoint (0.2.1)
   - TNExtensions/ImageCreator (0.1)
 
 DEPENDENCIES:
@@ -7,7 +19,7 @@ DEPENDENCIES:
   - TNExtensions/ImageCreator
 
 SPEC CHECKSUMS:
-  TNCore: 5702d2c07eeffe0c55b1c18ebb4463dbbf4e4a82
+  TNCore: b3202f573fff7ec880f8122ade6cca29472ef79f
   TNExtensions: 9329404176ea45b958644a1a65b3a426304d9319
 
 PODFILE CHECKSUM: ac6b5018284e68e0262d046d3286cdb09011ad56
